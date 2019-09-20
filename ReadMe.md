@@ -72,7 +72,47 @@ Spring Boot 是一个基于 Spring 之上的快速应用快速构建框架。Spr
     ```properties
        server.port=8888
     ```
-
 5. 启动 Spring Boot 程序
 6. 打开浏览器测试 Handler 是否能够接收到数据
-[访问连接]()
+
+[访问连接: http://localhost:8888/test?json=666](http://localhost:8888/test?json=666)
+
+访问结果：
+![接收显示](screenshot/3.png)
+
+---
+
+#### 5.6、安装 Kafka-Manager
+
+Kafka-Manager 是 Yahool 开源的一款 Kafka 监控管理工具。
+
+**安装步骤:**
+
+1. 下载安装包 [Kafka-Manager下载地址](https://github.com/yahoo/kafka-manager/releases)
+
+2. 解压到 `/usr/local/src/` 下
+    只需要在一台机器装就可以
+    ```bash
+    tar -zxvf kafka-manager-1.3.3.7.tar.gz
+    ```
+3. 修改 `conf/application.conf`
+    ```bash
+    kafka-manager.zkhosts="master:2181,slave1:2181,slave2:2181"
+    ```  
+    
+4. 启动 zookeeper
+    ```bash
+    zkServer.sh start
+    ```
+5. 启动 kafka
+    ```bash
+    ./kafka-server-start.sh ../config/server.properties > /dev/null 2>&1 &
+    ```
+  ![screenshot](screenshot/4.png)
+
+    
+    
+    
+    
+    
+    
