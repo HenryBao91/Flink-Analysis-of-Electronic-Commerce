@@ -6,7 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="batch-process" />
+        <module name="canal-kafka" />
+        <module name="real-process" />
         <module name="report" />
+        <module name="sync-db" />
       </profile>
     </annotationProcessing>
   </component>

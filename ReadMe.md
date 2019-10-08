@@ -89,12 +89,17 @@ Kafka-Manager 是 Yahool 开源的一款 Kafka 监控管理工具。
 **安装步骤:**
 
 1. 下载安装包 [Kafka-Manager下载地址](https://github.com/yahoo/kafka-manager/releases)
-
+    
 2. 解压到 `/usr/local/src/` 下
     只需要在一台机器装就可以
     ```bash
     tar -zxvf kafka-manager-1.3.3.7.tar.gz
     ```
+    需要编译
+   ```bash
+   cd kafka-manager-1.3.3.7
+   ./sbt clean dist
+   ``` 
 3. 修改 `conf/application.conf`
     ```bash
     kafka-manager.zkhosts="master:2181,slave1:2181,slave2:2181"
@@ -110,6 +115,69 @@ Kafka-Manager 是 Yahool 开源的一款 Kafka 监控管理工具。
     ```
   ![screenshot](screenshot/4.png)
 
+
+6. 启动 kafka-manager
+    ```bash
+    cd /usr/local/src/kafka-manager-1.3.3.17/bin
+    nohup ./kafka-manager 2>&1 & # 默认启动9000 端口
+    nohup ./kafka-manager 2>&1 -Dhttp.port=9900 & # 指定端口
+    ``` 
+  ![](screenshot/dc0e0c05.png)
+  
+   页面显示：
+ 
+   ![](screenshot/a66b3e6f.png)
+    
+    
+---
+
+#### 5.7、编写 Kafka 生产者配置工具类
+
+由于项目需要操作 Kafka，所以需要先构建出 KafkaTemplate，这是一个 Kafka 的模板对象，通过它可以很方便的发送消息到 Kafka。
+
+**开发步骤**
+
+1. 编写 Kafka 生产者配置
+2. 编写 Kafka 生产者 SpringBoot 配置工具类 `KafkaProducerConfig`，构建 `KafkaTemplate`
+
+**实现**
+
+1. 导入 Kafka 生产者配置文件
+	将下面的代码拷贝到`application.properties`中
+	
+    ```bash
+    #
+    # Kafka
+    #
+    #============编写kafka的配置文件（生产者）===============
+    # kafka的服务器地址
+    kafka.bootstrap_servers_config=master:9092,slave1:9092,slave2:9092
+    # 如果出现发送失败的情况，允许重试的次数
+    kafka.retries_config=0
+    # 每个批次发送多大的数据
+    kafka.batch_size=4096
+    # 定时发送，达到 1ms 发送
+    kafka.linger_ms_config=1
+	# 缓存的大小
+    kafka.buffer_memory_config=40960
+	# TOPOC 名字
+	kafka.topic=pyg
+    ```
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
