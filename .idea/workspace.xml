@@ -2,16 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9d769bd-b66a-4830-a397-61eeae1dd16a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/report/src/main/java/com/henry/report/util/KafkaProducerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/a66b3e6f.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/dc0e0c05.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/src/test/java/com/henry/report/KafkaTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/0b4ea4e1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/13c61ea9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/2b7f3937.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/5326b634.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/544d0e7a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/6ac8e320.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/7cf4425b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/7fe930e0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/8f89e666.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/a2ab75e3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/abb5e847.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/cba7b53e.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/canal-kafka/canal-kafka.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Flink-pyg.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/src/main/java/com/henry/report/util/KafkaProducerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/report/src/main/java/com/henry/report/util/KafkaProducerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/report/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sync-db/sync-db.iml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,30 +40,24 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ReadMe.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="3938">
-                <caret line="179" column="4" selection-start-line="179" selection-start-column="4" selection-end-line="179" selection-end-column="4" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/report/src/main/java/com/henry/report/util/KafkaProducerConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1056">
+              <caret line="58" selection-start-line="58" selection-end-line="60" selection-end-column="91" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/report/src/main/java/com/henry/report/util/KafkaProducerConfig.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/report/src/test/java/com/henry/report/KafkaTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+            <state relative-caret-position="528">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#760#795#1" expanded="true" />
-                <element signature="e#883#908#1" expanded="true" />
-                <element signature="e#983#1004#1" expanded="true" />
-                <element signature="e#1076#1103#1" expanded="true" />
-                <element signature="e#1181#1212#1" expanded="true" />
-                <element signature="e#1291#1307#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -65,8 +66,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/report/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="21" />
+            <state relative-caret-position="242">
+              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ReadMe.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="237">
+                <caret line="248" column="29" selection-start-line="248" selection-start-column="29" selection-end-line="248" selection-end-column="29" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -90,9 +103,10 @@
         <option value="$PROJECT_DIR$/report/src/main/java/com/henry/report/ReportApplication.java" />
         <option value="$PROJECT_DIR$/report/src/main/java/com/henry/report/controller/TestController.java" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/ReadMe.md" />
         <option value="$PROJECT_DIR$/report/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/report/src/test/java/com/henry/report/KafkaTest.java" />
         <option value="$PROJECT_DIR$/report/src/main/java/com/henry/report/util/KafkaProducerConfig.java" />
+        <option value="$PROJECT_DIR$/ReadMe.md" />
       </list>
     </option>
   </component>
@@ -111,10 +125,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="182" />
-    <option name="y" value="103" />
-    <option name="width" value="1598" />
-    <option name="height" value="917" />
+    <option name="x" value="61" />
+    <option name="y" value="27" />
+    <option name="width" value="1336" />
+    <option name="height" value="818" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -124,8 +138,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="CatdeaLogs" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -173,8 +187,7 @@
               <item name="Flink-pyg" type="462c0819:PsiDirectoryNode" />
               <item name="report" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -187,7 +200,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570372386523" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570550279436" />
     <property name="last_opened_file_path" value="E:/MyCode" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -208,7 +221,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.KafkaTest.sendMsg">
+    <configuration name="KafkaTest.sendMsg" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="report" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.henry.report.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.henry.report" />
+      <option name="MAIN_CLASS_NAME" value="com.henry.report.KafkaTest" />
+      <option name="METHOD_NAME" value="sendMsg" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ReportApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="report" />
       <extension name="coverage">
@@ -224,6 +253,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.KafkaTest.sendMsg" />
         <item itemvalue="Spring Boot.ReportApplication" />
       </list>
     </recent_temporary>
@@ -244,6 +274,8 @@
       <workItem from="1570328452309" duration="7106000" />
       <workItem from="1570367768454" duration="2906000" />
       <workItem from="1570417431953" duration="1832000" />
+      <workItem from="1570496081443" duration="4045000" />
+      <workItem from="1570587652684" duration="598000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1568945373051</created>
@@ -252,17 +284,31 @@
       <option name="project" value="LOCAL" />
       <updated>1568945373051</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="KafkaTemplate创建">
+      <created>1570496232137</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570496232137</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="KafkaTest_sendMsg - 2019.10.08 at 23h 49m 56s.xml">
+      <configuration name="KafkaTest.sendMsg" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="KafkaTest_sendMsg - 2019.10.08 at 23h 53m 31s.xml">
+      <configuration name="KafkaTest.sendMsg" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19843000" />
+    <option name="totallyTimeSpent" value="24486000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-130" y="627" width="1554" height="882" extended-state="0" />
-    <editor active="true" />
+    <frame x="61" y="27" width="1336" height="818" extended-state="1" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1303476" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20376176" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -272,7 +318,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3133415" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.47875354" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -284,7 +330,7 @@
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49962547" weight="0.32838285" />
+      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49962547" weight="0.39267886" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -300,9 +346,50 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="KafkaTemplate创建" />
+    <option name="LAST_COMMIT_MESSAGE" value="KafkaTemplate创建" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -375,36 +462,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ReadMe.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="3938">
-            <caret line="179" column="4" selection-start-line="179" selection-start-column="4" selection-end-line="179" selection-end-column="4" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/sync-db/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/src/main/java/com/henry/report/util/KafkaProducerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="58" selection-start-line="58" selection-end-line="60" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/src/test/java/com/henry/report/KafkaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/report/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="21" />
+        <state relative-caret-position="242">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/report/src/main/java/com/henry/report/util/KafkaProducerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#760#795#1" expanded="true" />
-            <element signature="e#883#908#1" expanded="true" />
-            <element signature="e#983#1004#1" expanded="true" />
-            <element signature="e#1076#1103#1" expanded="true" />
-            <element signature="e#1181#1212#1" expanded="true" />
-            <element signature="e#1291#1307#1" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/ReadMe.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="237">
+            <caret line="248" column="29" selection-start-line="248" selection-start-column="29" selection-end-line="248" selection-end-column="29" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

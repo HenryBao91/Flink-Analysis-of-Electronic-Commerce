@@ -164,14 +164,90 @@ Kafka-Manager 是 Yahool 开源的一款 Kafka 监控管理工具。
 	kafka.topic=pyg
     ```
     
+2. 编写 `kafkaTemplate`
+	```java
+	    @Bean   // 2、表示该对象是受 Spring 管理的一个 Bean
+    public KafkaTemplate kafkaTemplate() {
+
+        // 构建工程需要的配置
+        Map<String, Object> configs = new HashMap<>();
+
+        // 3、设置相应的配置
+        // 将成员变量的值设置到Map中，在创建kafka_producer中用到
+        configs.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrap_servers_config);
+        configs.put(ProducerConfig.RETRIES_CONFIG, retries_config);
+        configs.put(ProducerConfig.BATCH_SIZE_CONFIG, batch_size_config);
+        configs.put(ProducerConfig.LINGER_MS_CONFIG, linger_ms_config);
+        configs.put(ProducerConfig.BUFFER_MEMORY_CONFIG, buffer_memory_config);
+
+
+        // 4、创建生产者工厂
+        ProducerFactory<String, String> producerFactory = new DefaultKafkaProducerFactory(configs);
+
+        // 5、再把工厂传递给Template构造方法
+        // 表示需要返回一个 kafkaTemplate 对象
+        return new KafkaTemplate(producerFactory);
+    }
+	```
+	
+3. 在`test`测试源码中创建一个Junit测试用例
+	- 整合 Spring Boot Test
+	- 注入`kafkaTemplate`
+	- 测试发送100条消息到`test` Topic
+	```java
+	@RunWith(SpringRunner.class)
+	@SpringBootTest
+	public class KafkaTest {
+
+		@Autowired
+		KafkaTemplate kafkaTemplate;
+
+		@Test
+		public void sendMsg(){
+			for (int i = 0; i < 100; i++)
+				kafkaTemplate.send("test", "key","this is test msg") ;
+			}
+		
+	}
+	```
+ 
+4. 在KafkaManager创建`test` topic，三个分区，两个副本
+创建连接kafka集群
+![](screenshot/544d0e7a.png)
+![](screenshot/0b4ea4e1.png)
+![](screenshot/cba7b53e.png)
+创建连接成功
+![](screenshot/7cf4425b.png)
+![](screenshot/a2ab75e3.png)
+创建topic
+![](screenshot/5326b634.png)
+![](screenshot/8f89e666.png)
+创建topic成功
+![](screenshot/13c61ea9.png)
+
     
+5. 启动`kafka-conslole-consumer`
+	```bash
+	/usr/local/src/kafka_2.11-1.1.0/bin
+	./kafka-console-consumer.sh --zookeeper master:2181 --from-beginning --topic test
+	```
+    运行 test 程序，报错如下：
+    ![](screenshot/abb5e847.png)
+    添加序列化器代码：
+    ```java
+    // 设置 key、value 的序列化器
+    configs.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG , StringSerializer.class);
+    configs.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG , StringSerializer.class);
+    ```
+   
     
-    
-    
-    
-    
-    
-    
+6. 打开kafka-manager的consumer监控页面，查看对应的`logsize`参数，消息是否均匀的分布在不同的分区中
+    添加序列化器后重新运行，消费者终端打印消息：
+    ![](screenshot/7fe930e0.png)
+    打开页面管理：
+    ![](screenshot/2b7f3937.png)
+    消息全落在了一个分区上，这样会影响kafka性能 
+    ![](screenshot/6ac8e320.png)
     
     
     
