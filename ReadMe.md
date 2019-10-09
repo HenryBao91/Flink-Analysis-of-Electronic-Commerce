@@ -248,12 +248,31 @@ Kafka-Manager 是 Yahool 开源的一款 Kafka 监控管理工具。
     ![](screenshot/2b7f3937.png)
     消息全落在了一个分区上，这样会影响kafka性能 
     ![](screenshot/6ac8e320.png)
+    解决的最简单的方法：将 "key" 去掉
+	```java
+	    @Test
+    public void sendMsg(){
+        for (int i = 0; i < 100; i++)
+            kafkaTemplate.send("test","this is test msg") ;
+			// kafkaTemplate.send("test", "key","this is test msg") ;
+        }
+	```
     
     
-    
-    
-    
-    
+7、自定义分区的实现
+
+    ```java
+    public int partition(String topic, Object key, byte[] keyBytes, Object value, byte[] valueBytes, Cluster cluster) {
+        // 获取分区的数量
+        Integer partitions =  cluster.partitionCountForTopic(topic) ;
+        int curpartition = counter.incrementAndGet() % partitions ;  // 当前轮询的 partition 号
+        if(counter.get() > 65535){
+            counter.set(0);
+        }
+        return curpartition;
+    }
+    ```
+   ![](screenshot/8fe964b8.png) 
     
     
     

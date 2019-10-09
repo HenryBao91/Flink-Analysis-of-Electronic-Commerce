@@ -55,10 +55,12 @@ public class KafkaProducerConfig {
         configs.put(ProducerConfig.LINGER_MS_CONFIG, linger_ms_config);
         configs.put(ProducerConfig.BUFFER_MEMORY_CONFIG, buffer_memory_config);
 
-
         // 设置 key、value 的序列化器
         configs.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG , StringSerializer.class);
         configs.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG , StringSerializer.class);
+
+        // 指定自定义分区
+        configs.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, RoundRobinPartitioner.class);
 
 
         // 4、创建生产者工厂
