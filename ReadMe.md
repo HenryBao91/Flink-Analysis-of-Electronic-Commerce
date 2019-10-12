@@ -259,7 +259,7 @@ Kafka-Manager 是 Yahool 开源的一款 Kafka 监控管理工具。
 	```
     
     
-7、自定义分区的实现
+#### 5.8、自定义分区的实现
 
     ```java
     public int partition(String topic, Object key, byte[] keyBytes, Object value, byte[] valueBytes, Cluster cluster) {
@@ -275,7 +275,18 @@ Kafka-Manager 是 Yahool 开源的一款 Kafka 监控管理工具。
    ![](screenshot/8fe964b8.png) 
     
     
+#### 5.9、上报服务开发
+    上报服务系统要能够接收 http 请求，并将 http 请求中的数据写入到 kafka 中。
+   ![](screenshot/64a0b856.png)
     
-    
-    
-    
+    步骤：
+    1. 创建`Message`实体类对象
+        所有的点击流消息都会封装带 Message 实体类中
+    2. 设计一个 Controller 来接收 http 请求
+    3. 将 http 请求发送的消息封装到一个`Message`实体类对象
+    4. 使用`FastJSON`将`Message`实体类对象转换为JSON字符串
+    5. 将JSON字符串使用`KafkaTemplate`写入到`kafka`
+    6. 返回给客户端一个写入结果JSON字符串
+ 
+ #### 5.10、模拟生产点击流日志消息到Kafka
+ 
