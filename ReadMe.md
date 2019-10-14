@@ -289,4 +289,30 @@ Kafka-Manager 是 Yahool 开源的一款 Kafka 监控管理工具。
     6. 返回给客户端一个写入结果JSON字符串
  
  #### 5.10、模拟生产点击流日志消息到Kafka
- 
+    为了方便调试，可以使用一个消息生成工具来生产点击流日志，然后发送个上报服务系统。该消息生成工具可以一次性生产100条
+    Clicklog 信息，并转换成 JSON ，通过 HTTPClient 把消息内容发送到编写的 ReportController 上。
+   ![](screenshot/3ab50051.png)
+    
+   步骤：
+   1. 导入 ClickLog 实体类（ClickLog.java)
+   2. 导入点击流日志生成器（ClickLogGenerator.java)
+   3. 创建 Kafka 的 Topic（pyg）
+   4. 使用 `kafka-console-sonsumer.sh` 消费 topic 中的数据
+   5. 启动上报服务
+   6. 执行 `ClickLogGenerator`的main方法，生成 100 条用户浏览数据消息发送到 Kafka
+   
+   实现：
+   1. 创建 kafka topic
+   ```jshelllanguage
+    ./kafka-topics.sh --create --zookeeper master:2181 --replication-factor 2 --partitions 3 --topic pyg
+```
+   2. 启动消费者
+   ```jshelllanguage
+    ./kafka-console-consumer.sh --zookeeper master:2181 --from-beginning --topic pyg
+```
+
+   运行消息模拟器，运行结果如下（此时，上报服务也是在运行中）：
+  ![](screenshot/565c64ed.png)
+    
+    
+    
