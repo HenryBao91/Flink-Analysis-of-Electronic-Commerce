@@ -1,0 +1,7 @@
+val bootstrap.servers = config.getString("bootstrap.servers")
+val zookeeper.connect = config.getString("zookeeper.connect")
+val input.topic = config.getString("input.topic")
+val gruop.id = config.getString("gruop.id")
+val enable.auto.commit = config.getString("enable.auto.commit")
+val auto.commit.interval.ms = config.getString("auto.commit.interval.ms")
+val auto.offset.reset = config.getString("auto.offset.reset")

@@ -315,4 +315,52 @@ Kafka-Manager 是 Yahool 开源的一款 Kafka 监控管理工具。
   ![](screenshot/565c64ed.png)
     
     
-    
+### 6、Flink 实时数据分析系统开发
+   前边已经开发完成了`上报服务系统`，可以通过上报服务系统把电商页面中的点击流数据发送到 Kafka 中。那么，接下来就是开发
+   `Flink 实时分析系统`，通过流的方式读取 kafka 中的消息，进而分析数据。
+   ![](screenshot/98ddfe9a.png)
+   
+   **业务**
+   - 实时分析频道热点
+   - 实时分析频道PV/UV
+   - 实时分析频道新鲜度
+   - 实时分析频道地域分布
+   - 实时分析运营商平台
+   - 实时分析浏览器类型
+   
+   
+   **技术**
+   - Flink 实时处理算子
+   - 使用`CheckPoint`和`水印`解决Flink生产中遇到的问题（网络延迟、丢数据）
+   - Flink整合Kafka
+   - Flink整合HBase
+   
+#### 6.1、搭建 Flink 实时数据分析系统 环境
+
+##### 6.1.1 导入Maven项目依赖   
+
+##### 6.1.2 创建项目包结构
+包名 | 说明
+---|---
+`com.henry.realprocess.util` | 存放存放相关的工具类
+`com.henry.realprocess.bean` | 存放相关的实体类
+`com.henry.realprocess.task` | 存放具体的分析任务，每一个业务都是一个任务，对应的分析处理都写在这里
+ 
+ 
+##### 6.1.3 导入实时系统Kafka/Hbase配置
+ 
+1. 将`application.conf`导入到`resources`目录
+2. 将`log4j.properties`导入到`resources`目录
+
+> 注意修改`kafka服务器` 和`hbase服务器` 的机器名称
+
+##### 6.1.4 获取配置文件API介绍
+`ConfigFactory.load()`介绍
+![](screenshot/d6cc806c.png)
+
+常用 API 
+![](screenshot/df332a64.png)
+  
+  
+  
+  
