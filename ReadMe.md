@@ -361,6 +361,33 @@ Kafka-Manager 是 Yahool 开源的一款 Kafka 监控管理工具。
 常用 API 
 ![](screenshot/df332a64.png)
   
+##### 6.1.5 编写 Scala 读取代码配置工具类
+`com.henry.realprocess.util.GlobalConfigutil`
   
-  
-  
+#### 6.2 初始化Flink流式计算环境
+`com.henry.realprocess.App`
+
+
+#### 6.3 Flink添加checkPoint容错支持
+
+![](screenshot/75fcc253.png)
+增量更新的，不会因为创建了很多状态的快照，导致快照数据很庞大，存储到HDFS中。
+
+**实现**：
+
+1. 在Flink流式处理环境中，添加一下`checkpoint`的支持，确保Flink的高容错性，数据不丢失。
+![](screenshot/2193cbd1.png)
+
+
+#### 6.4 Flink整合Kafka
+##### 6.4.1 Flink读取Kafka数据
+![](screenshot/54187145.png)
+
+**实现**：
+
+1、启动上报服务系统 `ReportApplication`
+2、启动kafka
+3、启动kafka消息生成模拟器
+4、启动App.scala
+
+
