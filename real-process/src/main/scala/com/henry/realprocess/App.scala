@@ -3,6 +3,7 @@ package com.henry.realprocess
 
 import java.util.Properties
 
+import com.alibaba.fastjson.JSON
 import com.henry.realprocess.util.GlobalConfigutil
 import org.apache.flink.api.common.serialization.SimpleStringSchema
 import org.apache.flink.streaming.api.{CheckpointingMode, TimeCharacteristic}
@@ -23,7 +24,7 @@ object App {
   def main(args: Array[String]): Unit = {
 
     // 初始化Flink流式环境,ctrl+alt+v
-     val env:StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
+    val env: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
 
     // 设置处理时间为EventTime
     env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime)
@@ -32,14 +33,14 @@ object App {
     env.setParallelism(1)
 
     // 本地测试 加载本地集合 成为一个 Datastream 打印输出
-//    val localDataStream:DataStream[String] = env.fromCollection(
-//      List("hadoop", "hive", "hbase", "flink")
-//    )
-//    localDataStream.print()
+    //    val localDataStream:DataStream[String] = env.fromCollection(
+    //      List("hadoop", "hive", "hbase", "flink")
+    //    )
+    //    localDataStream.print()
 
 
     // 添加 checkpoint 的支持
-    env.enableCheckpointing(5000)    // 5秒启动一次checkpoint
+    env.enableCheckpointing(5000) // 5秒启动一次checkpoint
 
     // 设置 checkpoint 只检查 1次，即 仅一次
     env.getCheckpointConfig.setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE)
@@ -61,7 +62,7 @@ object App {
     // 整合kafka
     val properties = new Properties()
     //    kafka 集群地址
-    properties.setProperty("bootstrap.servers",GlobalConfigutil.bootstrapServers)
+    properties.setProperty("bootstrap.servers", GlobalConfigutil.bootstrapServers)
     //     zookeeper 集群地址
     properties.setProperty("zookeeper.connect", GlobalConfigutil.zookeeperConnect)
     //     kafka topic
@@ -82,10 +83,23 @@ object App {
       new SimpleStringSchema(),
       properties)
 
-    val kafkaDataStream:DataStream[String] = env.addSource(consumer)
+    val kafkaDataStream: DataStream[String] = env.addSource(consumer)
 
-    kafkaDataStream.print()
+    //    kafkaDataStream.print()
 
+    // JSON -> 元组
+    val tupleDataStream = kafkaDataStream.map {
+      msgJson =>
+        val jsonObject = JSON.parseObject(msgJson)
+
+        val message = jsonObject.getString("message")
+        val count = jsonObject.getString("count")
+        val timestamp = jsonObject.getString("timestamp")
+
+        (message, count, timestamp)
+    }
+
+    tupleDataStream.print()
     // 执行任务
     env.execute("real-process")
   }

@@ -390,4 +390,28 @@ Kafka-Manager 是 Yahool 开源的一款 Kafka 监控管理工具。
 3、启动kafka消息生成模拟器
 4、启动App.scala
 
+消息生成模拟器发送的消息：
+![](screenshot/831e1859.png)
+App实时分析系统接收到的消息：
+![](screenshot/5a321628.png)
+消息者接收到的消息：
+![](screenshot/b77622b6.png)
+
+
+##### 6.4.2 Kafka消息解析为元组
+
+步骤：
+- 使用map算子，遍历kafka中消费到的数据
+- 使用FastJSON转换为JSON对象
+- 将JSON的数据解析为一个元组
+
+代码：
+1. 使用map算子，将Kafka中消费到的数据，使用FastJSON转换为JSON对象
+2. 将JSON的数据解析为一个元组
+3. 打印经过map映射后的元组数据，测试能否正确解析
+App实时分析系统接收到的消息（Tuple类型）：
+![](screenshot/6f897038.png)
+![](screenshot/14679e84.png)
+
+
 
