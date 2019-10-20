@@ -95,6 +95,7 @@ public class ClickLogGenerator {
                 }
             }catch (Exception e){
                 throw new RuntimeException();
+
             }
 
         }catch (Exception e){

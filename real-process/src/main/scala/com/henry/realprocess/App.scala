@@ -4,6 +4,7 @@ package com.henry.realprocess
 import java.util.Properties
 
 import com.alibaba.fastjson.JSON
+import com.henry.realprocess.bean.{ClickLog, Message}
 import com.henry.realprocess.util.GlobalConfigutil
 import org.apache.flink.api.common.serialization.SimpleStringSchema
 import org.apache.flink.streaming.api.{CheckpointingMode, TimeCharacteristic}
@@ -11,6 +12,8 @@ import org.apache.flink.streaming.api.scala.{DataStream, StreamExecutionEnvironm
 import org.apache.flink.api.scala._
 import org.apache.flink.runtime.state.filesystem.FsStateBackend
 import org.apache.flink.streaming.api.environment.CheckpointConfig
+import org.apache.flink.streaming.api.functions.AssignerWithPeriodicWatermarks
+import org.apache.flink.streaming.api.watermark.Watermark
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer010
 
 
@@ -23,7 +26,7 @@ object App {
 
   def main(args: Array[String]): Unit = {
 
-    // 初始化Flink流式环境,ctrl+alt+v
+    //------------ 初始化Flink流式环境,ctrl+alt+v --------------------
     val env: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
 
     // 设置处理时间为EventTime
@@ -39,7 +42,7 @@ object App {
     //    localDataStream.print()
 
 
-    // 添加 checkpoint 的支持
+    //------------ 添加 checkpoint 的支持 -------------------------------
     env.enableCheckpointing(5000) // 5秒启动一次checkpoint
 
     // 设置 checkpoint 只检查 1次，即 仅一次
@@ -59,7 +62,7 @@ object App {
     env.setStateBackend(new FsStateBackend("hdfs://master:9000/flink-checkpoint/"))
 
 
-    // 整合kafka
+    //--------------- 整合kafka --------------------------
     val properties = new Properties()
     //    kafka 集群地址
     properties.setProperty("bootstrap.servers", GlobalConfigutil.bootstrapServers)
@@ -93,13 +96,43 @@ object App {
         val jsonObject = JSON.parseObject(msgJson)
 
         val message = jsonObject.getString("message")
-        val count = jsonObject.getString("count")
-        val timestamp = jsonObject.getString("timestamp")
+        val count = jsonObject.getLong("count")
+        val timeStamp = jsonObject.getLong("timestamp")
 
-        (message, count, timestamp)
+//        (message, count, timeStamp)
+        // 改造成样例类
+//        (ClickLog(message), count, timeStamp)
+        Message(ClickLog(message), count, timeStamp)
+
     }
 
     tupleDataStream.print()
+
+    //-----------------  添加水印支持  -----------------------
+
+    tupleDataStream.assignTimestampsAndWatermarks(
+      new AssignerWithPeriodicWatermarks[Message] {
+
+        var currentTimestamp = 0L
+
+        // 延迟时间
+        var maxDelayTime = 2000L
+
+        // 获取当前时间戳
+        override def getCurrentWatermark: Watermark = {
+          // 设置水印时间比事件时间小 2s
+          new Watermark(currentTimestamp - maxDelayTime)
+        }
+
+        // 获取当前事件时间
+        override def extractTimestamp(
+                     element: Message,
+                     previousElementTimestamp: Long): Long = {
+          currentTimestamp = Math.max(element.timeStamp, previousElementTimestamp)
+          currentTimestamp
+        }
+    })
+
     // 执行任务
     env.execute("real-process")
   }

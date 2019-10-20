@@ -414,4 +414,55 @@ App实时分析系统接收到的消息（Tuple类型）：
 ![](screenshot/14679e84.png)
 
 
+##### 6.4.3 Flink封装点击流消息为样例类
+
+**步骤**：
+1. 创建一个`ClikLog`样例类来封装消息
+2. 使用map算子将数据封装到`ClickLog`样例类
+
+
+**代码**：
+1. 在bean包中，创建`ClikLog`样例类，添加以下字段
+    - 频道ID（channelID）
+    - 产品类别ID（categoryID）
+    - 产品ID（produceID）
+    - 国家（country）
+    - 省份（province）
+    - 城市（city）
+    - 网络方式（network）
+    - 来源方式（source）
+    - 来源方式（browserType）
+    - 进入网站时间（entryTime）
+    - 离开网站时间（leaveTime）
+    - 用户ID（userID）
+2. 在`ClikLog`半生对象中实现`apply`方法
+3. 使用FastJSON的`JSON.parseObject`方法将JSON字符串构建一个`ClikLog`实例对象
+4. 使用map算子将数据封装到`ClikLog`样例类
+5. 在样例类中编写一个main方法，传入一些JSON字符串测试是否能够正确解析
+6. 重新运行Flink程序，测试数据是否能够完成封装
+
+App实时分析系统接收到的消息（样例类）：
+![](screenshot/d452de1b.png)
+
+
+##### 6.4.4 封装KafKa消息为Message样例类
+
+
+**步骤**：
+1. 创建一个`Message`样例类，将ClickLog、时间戳、数量封装
+2. 将Kafka中的数据整个封装到`Message`类中
+3. 运行Flink测试
+
+App实时分析系统接收到的消息（Message样例类）：
+![](screenshot/0fcd02b7.png)
+
+#### 6.5 Flink添加水印支持
+![](screenshot/e751cb2d.png)
+![](screenshot/c6d0728b.png)
+![](screenshot/9e4179c5.png)
+![](screenshot/72d64e76.png)
+
+
+
+
 
