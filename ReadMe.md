@@ -464,5 +464,30 @@ App实时分析系统接收到的消息（Message样例类）：
 
 
 
+### 7、HBaseUtil 工具类开发
+#### 7.1、HBase工具类介绍
+前面实现了Flink整合Kafka，可以从Kafka中获取数据进行分析，分析之后，把结果存入HBase
+中，为了方便，提前编写一个操作HBase工具类。HBase作为一个数据库面肯定需要进行数据的增删改差，
+那么就需要围绕这几个进行开发。
+![](screenshot/c84f6044.png)
+
+##### 7.1.1、API介绍
+![](screenshot/d1a2dc81.png)
+![](screenshot/d457be6b.png)
+
+**HBase操作基本类**
+![](screenshot/2f5a312e.png)
+
+
+##### 7.1.2、获取表
+代码实现添加HBase配置信息
+```scala
+val conf:Configuration = HBaseConfiguration.create()
+```
+![](screenshot/0ced234a.png)
+
+
+
+
 
 
