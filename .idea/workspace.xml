@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9d769bd-b66a-4830-a397-61eeae1dd16a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/real-process/src/main/resources/hbase-site.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/util/HBaseUtil.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/0ced234a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/2f5a312e.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/c84f6044.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/d1a2dc81.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/d457be6b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/34a79ff7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/e4022013.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/real-process/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/real-process/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/util/HBaseUtil.scala" beforeDir="false" afterPath="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/util/HBaseUtil.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -46,26 +42,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ReadMe.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="545">
-                <caret line="488" lean-forward="true" selection-start-line="488" selection-end-line="488" />
+              <first_editor relative-caret-position="443">
+                <caret line="496" lean-forward="true" selection-start-line="496" selection-end-line="496" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/util/HBaseUtil.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="524">
-              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+            <state relative-caret-position="502">
+              <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
               <folding>
                 <element signature="e#36#79#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/real-process/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-748">
+              <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -114,8 +119,8 @@
         <option value="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/App.scala" />
         <option value="$PROJECT_DIR$/real-process/src/main/resources/hbase-site.xml" />
         <option value="$PROJECT_DIR$/real-process/pom.xml" />
-        <option value="$PROJECT_DIR$/ReadMe.md" />
         <option value="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/util/HBaseUtil.scala" />
+        <option value="$PROJECT_DIR$/ReadMe.md" />
       </list>
     </option>
   </component>
@@ -150,9 +155,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="132" />
-    <option name="y" value="21" />
-    <option name="width" value="1219" />
+    <option name="x" value="131" />
+    <option name="y" value="20" />
+    <option name="width" value="1220" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -163,9 +168,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="CatdeaLogs" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="CatdeaLogs" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,14 +256,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571671230893" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571671601984" />
+    <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/org/apache/hbase/hbase-common/2.0.0/hbase-common-2.0.0-sources.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -392,7 +397,8 @@
       <workItem from="1571471829961" duration="5814000" />
       <workItem from="1571553303867" duration="3237000" />
       <workItem from="1571556597507" duration="5573000" />
-      <workItem from="1571659752317" duration="6333000" />
+      <workItem from="1571659752317" duration="6855000" />
+      <workItem from="1571748871838" duration="6188000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1568945373051</created>
@@ -457,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571562410200</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="三、HBase 工具类">
+      <created>1571671569278</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1571671569278</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -475,7 +488,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107767000" />
+    <option name="totallyTimeSpent" value="114477000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -490,8 +503,8 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19772118" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.24940991" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.14872521" visible="true" weight="0.15281501" />
+      <window_info id="Structure" order="1" sideWeight="0.8512748" side_tool="true" weight="0.23525469" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
@@ -611,7 +624,8 @@
     <MESSAGE value="15" />
     <MESSAGE value="19" />
     <MESSAGE value="二、Flink整合Kafka" />
-    <option name="LAST_COMMIT_MESSAGE" value="二、Flink整合Kafka" />
+    <MESSAGE value="三、HBase 工具类" />
+    <option name="LAST_COMMIT_MESSAGE" value="三、HBase 工具类" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://E:/MyCode/data-manage/pom.xml" />
@@ -882,30 +896,86 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-common/1.2.0/hbase-common-1.2.0.jar!/org/apache/hadoop/hbase/TableName.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="293" column="21" selection-start-line="293" selection-start-column="21" selection-end-line="293" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/real-process/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1298">
-          <caret line="71" column="36" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
+        <state relative-caret-position="-748">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-client/2.0.0/hbase-client-2.0.0.jar!/org/apache/hadoop/hbase/client/TableDescriptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-client/2.0.0/hbase-client-2.0.0-sources.jar!/org/apache/hadoop/hbase/client/TableDescriptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-common/2.0.0/hbase-common-2.0.0.jar!/org/apache/hadoop/hbase/TableName.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-common/2.0.0/hbase-common-2.0.0-sources.jar!/org/apache/hadoop/hbase/TableName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="54" column="19" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-client/2.0.0/hbase-client-2.0.0-sources.jar!/org/apache/hadoop/hbase/client/TableDescriptorBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="367" column="63" selection-start-line="367" selection-start-column="63" selection-end-line="367" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-client/2.0.0/hbase-client-2.0.0-sources.jar!/org/apache/hadoop/hbase/client/ColumnFamilyDescriptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="40" column="25" lean-forward="true" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-client/2.0.0/hbase-client-2.0.0-sources.jar!/org/apache/hadoop/hbase/client/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret line="76" column="8" lean-forward="true" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/util/HBaseUtil.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
+          <folding>
+            <element signature="e#36#79#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ReadMe.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="545">
-            <caret line="488" lean-forward="true" selection-start-line="488" selection-end-line="488" />
+          <first_editor relative-caret-position="443">
+            <caret line="496" lean-forward="true" selection-start-line="496" selection-end-line="496" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/util/HBaseUtil.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-          <folding>
-            <element signature="e#36#79#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

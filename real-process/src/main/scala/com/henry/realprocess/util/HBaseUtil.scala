@@ -1,8 +1,8 @@
 package com.henry.realprocess.util
 
 import org.apache.hadoop.conf.Configuration
-import org.apache.hadoop.hbase.HBaseConfiguration
-import org.apache.hadoop.hbase.client.{Admin, Connection, ConnectionFactory}
+import org.apache.hadoop.hbase.{HBaseConfiguration, TableName}
+import org.apache.hadoop.hbase.client.{ColumnFamilyDescriptor, _}
 
 /**
   * @Author: Henry
@@ -25,4 +25,44 @@ object HBaseUtil {
 
   // HBase 的操作 API
   val admin:Admin = conn.getAdmin
+
+  /**
+    *  返回Table，如果不存在，则创建表
+    *
+    * @param tableName
+    * @param columnFamilyName
+    * @return
+    */
+  def getTable(tableNameStr:String, columnFamilyName:String):Table={
+
+
+    // 获取 TableName
+    val tableName:TableName = TableName.valueOf(tableNameStr)
+
+    // 如果表不存在，则创建表
+
+    if(!admin.tableExists(tableName)){
+
+      // 构建出表的描述的建造者
+      val descBuilder: TableDescriptorBuilder = TableDescriptorBuilder.newBuilder(tableName)
+
+      val familyDescriptor:ColumnFamilyDescriptor = ColumnFamilyDescriptorBuilder
+        .newBuilder(columnFamilyName.getBytes).build()
+
+      // 给表添加列族
+      descBuilder.setColumnFamily(familyDescriptor)
+
+      // 创建表
+      admin.createTable(descBuilder.build())
+    }
+
+    conn.getTable(tableName)
+
+  }
+
+  def main(args: Array[String]): Unit = {
+
+    println(getTable("test","nfo"))
+  }
+
 }

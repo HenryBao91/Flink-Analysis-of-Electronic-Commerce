@@ -486,6 +486,12 @@ val conf:Configuration = HBaseConfiguration.create()
 ```
 ![](screenshot/0ced234a.png)
 
+![](screenshot/e4022013.png)
+
+不存在表时，则创建表
+![](screenshot/34a79ff7.png)
+
+
 
 
 
