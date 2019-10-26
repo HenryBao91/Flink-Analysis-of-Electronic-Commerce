@@ -489,10 +489,46 @@ val conf:Configuration = HBaseConfiguration.create()
 ![](screenshot/e4022013.png)
 
 不存在表时，则创建表
-![](screenshot/34a79ff7.png)
+![](screenshot/908989c5.png)
+创建后：
+![](screenshot/69907922.png)
+![](screenshot/8cca6196.png)
 
 
+##### 7.1.3、存储数据
+创建`putData`方法
+- 调用 getTable获取表
+- 构建`put`对象
+- 添加列、列值
+- 对 table 进行 put 操作
+- 启动编写 main 进行测试
 
+![](screenshot/af73ebaa.png)
+
+
+##### 7.1.4、获取数据
+1、 使用Connection 获取表
+2、 创建 getData 方法
+    - 调用 getTable 获取表
+    - 构建 get 对象
+    - 对 table 执行 get 操作，获取 result
+    - 使用 Result.getValue 获取列族列对应的值
+    - 捕获异常
+    - 关闭表
+    
+    
+##### 7.1.5、批量存储数据
+创建 putMapData 方法
+    - 调用 getTable 获取表
+    - 构建 get 对象
+    - 添加 Map 中的列、列值
+    - 对 table 执行 put 操作
+    - 捕获异常
+    - 关闭表
+![](screenshot/ea8764de.png)
+
+
+##### 7.1.6、批量获取数据
 
 
 

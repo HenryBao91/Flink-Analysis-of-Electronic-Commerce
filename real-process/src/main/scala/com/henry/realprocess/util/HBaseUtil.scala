@@ -3,6 +3,7 @@ package com.henry.realprocess.util
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.hbase.{HBaseConfiguration, TableName}
 import org.apache.hadoop.hbase.client.{ColumnFamilyDescriptor, _}
+import org.apache.hadoop.hbase.util.Bytes
 
 /**
   * @Author: Henry
@@ -60,9 +61,133 @@ object HBaseUtil {
 
   }
 
+  /**
+    * 存储单列数据
+    *
+    * @param tableNameStr 表名
+    * @param rowkey 主键
+    * @param columnFamilyName 列族名
+    * @param columnName 列名
+    * @param columnValue  列值
+    */
+  def putData(tableNameStr:String, rowkey:String, columnFamilyName:String, columnName:String, columnValue:String)={
+
+    // 获取表
+    val table:Table = getTable(tableNameStr, columnFamilyName)
+
+    try{
+      // Put
+      val put:Put = new Put(rowkey.getBytes)
+      put.addColumn(columnFamilyName.getBytes, columnName.getBytes, columnValue.getBytes)
+
+      // 保存数据
+      table.put(put)
+    }catch {
+      case ex:Exception=>{
+        ex.printStackTrace()
+      }
+    }finally {
+      table.close()
+    }
+  }
+
+
+  /**
+    * 通过单列名获取列值
+    * @param tableNameStr 表名
+    * @param rowkey 主键
+    * @param columnFamilyName 列族名
+    * @param columnName 列名
+    * @param columnValue  列值
+    * @return
+    */
+  def getData(tableNameStr:String, rowkey:String, columnFamilyName:String, columnName:String):String={
+
+    // 1. 获取 Table 对象
+    val table = getTable(tableNameStr, columnFamilyName)
+
+    try {
+      // 2. 构建 get 对象
+      val get = new Get(rowkey.getBytes)
+
+      // 3. 进行查询
+      val result:Result = table.get(get)
+
+      // 4. 判断查询结果是否为空，并且包含要查询的列
+      if (result != null && result.containsColumn(columnFamilyName.getBytes, columnName.getBytes)){
+        val bytes: Array[Byte] = result.getValue(columnFamilyName.getBytes(), columnName.getBytes)
+
+        Bytes.toString(bytes)
+      }else{
+        ""
+      }
+
+    }catch{
+      case ex:Exception => {
+        ex.printStackTrace()
+        ""
+      }
+    }finally {
+      // 5、关闭表
+      table.close()
+    }
+
+  }
+
+
+  /**
+    * 存储多列数据
+    * @param tableNameStr 表名
+    * @param rowkey 主键
+    * @param columnFamilyName 列族名
+    * @param map 多个列名和列族集合
+    */
+  def putMapData(tableNameStr:String, rowkey:String, columnFamilyName:String, map:Map[String,Any])={
+
+    // 1、获取 table 对象
+    val table = getTable(tableNameStr, columnFamilyName)
+
+    try{
+      // 2、创建 put
+      val put = new Put(rowkey.getBytes)
+
+      // 3、在 put 中添加多个列名和列值
+      for ((colName, colValue) <- map){
+        put.addColumn(columnFamilyName.getBytes, colName.getBytes, colValue.toString.getBytes)
+      }
+
+      // 4、保存 put
+      table.put(put)
+
+    }catch{
+      case ex:Exception => {
+        ex.printStackTrace()
+
+      }
+    }finally {
+      // 5、关闭表
+      table.close()
+    }
+
+
+    // 5、关闭 table
+    table.close()
+  }
+
+
   def main(args: Array[String]): Unit = {
 
-    println(getTable("test","nfo"))
+//    println(getTable("test","info"))
+//    putData("test", "1", "info", "t1", "hello world")
+//    println(getData("test", "1", "info", "t1"))
+
+    val map = Map(
+      "t2" -> "scala" ,
+      "t3" -> "hive" ,
+      "t4" -> "flink"
+    )
+    putMapData("test", "1", "info", map)
+
   }
 
 }

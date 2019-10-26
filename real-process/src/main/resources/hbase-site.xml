@@ -25,7 +25,7 @@
 	<!-- 指定hbase在HDFS上存储的路径 -->
     <property>
 		<name>hbase.rootdir</name>
-		<value>hdfs://master:9000/hbase</value>
+		<value>hdfs://master:9000/hbase2</value>
     </property>
 
 	<!-- 指定hbase是分布式的 -->
@@ -34,10 +34,10 @@
         <value>true</value>
     </property>
 
-    <!-- hbase 0.98后的新变动，之前版本没有orit，默认端口为60000 -->
+    <!-- hbase 0.98后的新变动，之前版本没有，默认端口为60010 -->
     <property>
         <name>hbase.master.info.port</name>
-        <value>60010</value>
+        <value>16010</value>
     </property>
 
 	<!-- 指定zk的地址，多个用“,”分割 -->
@@ -53,7 +53,7 @@
 
     <property>
         <name>hbase.zookeeper.property.dataDir</name>
-        <value>/usr/local/src/zookeeper-3.4.5/zkdatas</value>
+        <value>/usr/local/src/zookeeper-3.4.5/hbasedata</value>
     </property>
 
 </configuration>
