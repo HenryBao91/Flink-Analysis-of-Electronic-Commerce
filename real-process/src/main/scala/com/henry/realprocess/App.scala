@@ -4,7 +4,8 @@ package com.henry.realprocess
 import java.util.Properties
 
 import com.alibaba.fastjson.JSON
-import com.henry.realprocess.bean.{ClickLog, Message}
+import com.henry.realprocess.bean.{ClickLog, ClickLogWide, Message}
+import com.henry.realprocess.task.PreprocessTask
 import com.henry.realprocess.util.GlobalConfigutil
 import org.apache.flink.api.common.serialization.SimpleStringSchema
 import org.apache.flink.streaming.api.{CheckpointingMode, TimeCharacteristic}
@@ -110,7 +111,7 @@ object App {
 
     //-----------------  添加水印支持  -----------------------
 
-    tupleDataStream.assignTimestampsAndWatermarks(
+    var watermarkDataStream = tupleDataStream.assignTimestampsAndWatermarks(
       new AssignerWithPeriodicWatermarks[Message] {
 
         var currentTimestamp = 0L
@@ -131,7 +132,10 @@ object App {
           currentTimestamp = Math.max(element.timeStamp, previousElementTimestamp)
           currentTimestamp
         }
-    })
+    }).print()
+
+    //  数据的预处理
+    val clickLogWideDateStream : DataStream[ClickLogWide] = PreprocessTask.process(watermarkDataStream)
 
     // 执行任务
     env.execute("real-process")

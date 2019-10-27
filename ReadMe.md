@@ -555,6 +555,50 @@ val conf:Configuration = HBaseConfiguration.create()
     - 启动编写 main 进行测试
  ![](screenshot/d99a61f4.png)
  ![](screenshot/d068b5c0.png)
+ 
+ 
     
-    
+ ### 8、实时数据分析业务目标
+ ![](screenshot/520fd656.png)
+  
+
+ ### 9、业务开发一般流程
+![](screenshot/79c600b1.png)
+
+**一般流程**
+![](screenshot/e6130b81.png)
+
+
+ ### 10、点击流日志实时数据预处理
+ #### 10.1、业务分析
+ 为了方便后续分析，需要对点击流日志，使用 Flink 进行实时预处理。在原有点击流日志的基础上添加
+ 一些字段，方便进行后续业务功能的统计开发。
+ 
+ 以下为 kafka 中消费得到的原始点击流日志字段：
+![](screenshot/e61c1e01.png)
+
+需要在原有点击流日志字段基础上，再添加以下字段：
+![](screenshot/201507bb.png)
+
+不能直接从点击流日志中，直接计算得到上述后4个字段的值。而是需要在 hbase 中有一个 **历史记录表**
+，来保存用户的历史访问状态才能计算得到。
+**历史记录表** 表结构：
+![](screenshot/76c4fbf8.png)
+
+
+ #### 10.2、创建 ClickLogWide 样例类
+ 
+ 使用 ClickLogWide 样例类来保存拓宽后的点击流日志数据。直接**复制**原有的`ClickLog`样例类，
+ 然后给它额外加上下列额外的字段;
+ 
+ **步骤*
+ ![](screenshot/0b4d0c1b.png)
+ 
+ ![](screenshot/74d009f4.png)
+ 
+ 
+ 
+ 
+ 
+
 
