@@ -34,10 +34,10 @@
         <value>true</value>
     </property>
 
-    <!-- hbase 0.98后的新变动，之前版本没有，默认端口为60010 -->
+    <!-- hbase 0.98后的新变动，之前版本没有，默认端口为60000 -->
     <property>
         <name>hbase.master.info.port</name>
-        <value>16010</value>
+        <value>16000</value>
     </property>
 
 	<!-- 指定zk的地址，多个用“,”分割 -->

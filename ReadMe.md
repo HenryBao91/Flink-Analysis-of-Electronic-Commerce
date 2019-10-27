@@ -503,7 +503,7 @@ val conf:Configuration = HBaseConfiguration.create()
 - 对 table 进行 put 操作
 - 启动编写 main 进行测试
 
-![](screenshot/af73ebaa.png)
+![](screenshot/9379b632.png)
 
 
 ##### 7.1.4、获取数据
@@ -516,6 +516,7 @@ val conf:Configuration = HBaseConfiguration.create()
     - 捕获异常
     - 关闭表
     
+![](screenshot/7b5e4836.png)
     
 ##### 7.1.5、批量存储数据
 创建 putMapData 方法
@@ -525,11 +526,35 @@ val conf:Configuration = HBaseConfiguration.create()
     - 对 table 执行 put 操作
     - 捕获异常
     - 关闭表
-![](screenshot/ea8764de.png)
+![](screenshot/aef2abe1.png)
+
 
 
 ##### 7.1.6、批量获取数据
+创建 getMapData 方法
+    - 调用 getTable 获取表
+    - 构建 get 对象
+    - 根据 get 对象查询表
+    - 构建可变 Map
+    - 遍历查询各个列的列值
+    - 过滤掉不符合的结果
+    - 把结果转换为 Map 返回
+    - 捕获异常
+    - 关闭表
+    - 启动编写 main 进行测试
+![](screenshot/a35893be.png)
 
 
-
+##### 7.1.7、删除数据
+创建 deleteData 方法
+    - 调用 getTable 获取表
+    - 构建 Delete 对象
+    - 对 table 执行 delete 操作
+    - 捕获异常
+    - 关闭表
+    - 启动编写 main 进行测试
+ ![](screenshot/d99a61f4.png)
+ ![](screenshot/d068b5c0.png)
+    
+    
 

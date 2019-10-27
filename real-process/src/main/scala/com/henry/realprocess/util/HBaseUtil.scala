@@ -30,8 +30,8 @@ object HBaseUtil {
   /**
     *  返回Table，如果不存在，则创建表
     *
-    * @param tableName
-    * @param columnFamilyName
+    * @param tableName        表名
+    * @param columnFamilyName 列族名
     * @return
     */
   def getTable(tableNameStr:String, columnFamilyName:String):Table={
@@ -64,11 +64,11 @@ object HBaseUtil {
   /**
     * 存储单列数据
     *
-    * @param tableNameStr 表名
-    * @param rowkey 主键
+    * @param tableNameStr     表名
+    * @param rowkey           主键
     * @param columnFamilyName 列族名
-    * @param columnName 列名
-    * @param columnValue  列值
+    * @param columnName       列名
+    * @param columnValue      列值
     */
   def putData(tableNameStr:String, rowkey:String, columnFamilyName:String, columnName:String, columnValue:String)={
 
@@ -94,11 +94,11 @@ object HBaseUtil {
 
   /**
     * 通过单列名获取列值
-    * @param tableNameStr 表名
-    * @param rowkey 主键
+    * @param tableNameStr     表名
+    * @param rowkey           主键
     * @param columnFamilyName 列族名
-    * @param columnName 列名
-    * @param columnValue  列值
+    * @param columnName       列名
+    * @param columnValue      列值
     * @return
     */
   def getData(tableNameStr:String, rowkey:String, columnFamilyName:String, columnName:String):String={
@@ -137,10 +137,10 @@ object HBaseUtil {
 
   /**
     * 存储多列数据
-    * @param tableNameStr 表名
-    * @param rowkey 主键
+    * @param tableNameStr     表名
+    * @param rowkey           主键
     * @param columnFamilyName 列族名
-    * @param map 多个列名和列族集合
+    * @param map              多个列名和列族集合
     */
   def putMapData(tableNameStr:String, rowkey:String, columnFamilyName:String, map:Map[String,Any])={
 
@@ -175,18 +175,99 @@ object HBaseUtil {
   }
 
 
+  /**
+    * 获取多了数据的值
+    * @param tableNameStr     表名
+    * @param rowkey           主键
+    * @param columnFamilyName 列族名
+    * @param columnNameList   多个列名和列值集合
+    * @return
+    */
+  def getMapData(tableNameStr:String, rowkey:String, columnFamilyName:String, columnNameList:List[String]):Map[String,String]= {
+
+    // 1、获取 Table
+    val table = getTable(tableNameStr, columnFamilyName)
+
+    try{
+      // 2、构建 get
+      val get = new Get(rowkey.getBytes)
+
+      // 3、执行查询
+      val result: Result = table.get(get)
+
+      // 4、遍历列名集合，取出列值，构建成 Map 返回
+      columnNameList.map {
+        col =>
+          val bytes: Array[Byte] = result.getValue(columnFamilyName.getBytes(), col.getBytes)
+
+          if (bytes != null && bytes.size > 0) {
+            col -> Bytes.toString(bytes)
+          }
+          else {   // 如果取不到值，则赋一个空串
+            "" -> ""
+          }
+      }.filter(_._1 != "").toMap  // 把不是空串的过滤出来，再转换成 Map
+
+    }catch {
+      case ex:Exception => {
+        ex.printStackTrace()
+        Map[String, String]()   // 返回一个空的 Map
+      }
+    }finally {
+      // 5、关闭 Table
+      table.close()
+    }
+  }
+
+
+  /**
+    * 删除数据
+    * @param tableNameStr     表名
+    * @param rowkey           主键
+    * @param columnFamilyName 列族名
+    */
+  def delete(tableNameStr:String, rowkey:String, columnFamilyName:String)={
+
+    // 1、获取 Table
+    val table:Table = getTable(tableNameStr, columnFamilyName)
+
+    try {
+      // 2、构建 delete 对象
+      val delete: Delete = new Delete(rowkey.getBytes)
+
+      // 3、执行删除
+      table.delete(delete)
+
+    }
+    catch {
+      case ex:Exception =>
+        ex.printStackTrace()
+    }
+    finally {
+      // 4、关闭 table
+      table.close()
+    }
+
+  }
+
+
   def main(args: Array[String]): Unit = {
 
 //    println(getTable("test","info"))
 //    putData("test", "1", "info", "t1", "hello world")
 //    println(getData("test", "1", "info", "t1"))
 
-    val map = Map(
-      "t2" -> "scala" ,
-      "t3" -> "hive" ,
-      "t4" -> "flink"
-    )
-    putMapData("test", "1", "info", map)
+//    val map = Map(
+//      "t2" -> "scala" ,
+//      "t3" -> "hive" ,
+//      "t4" -> "flink"
+//    )
+//    putMapData("test", "1", "info", map)
+
+//    println(getMapData("test", "1", "info", List("t1", "t2")))
+
+    delete("test", "1", "info")
+    println(getMapData("test", "1", "info", List("t1", "t2")))
 
   }
 
