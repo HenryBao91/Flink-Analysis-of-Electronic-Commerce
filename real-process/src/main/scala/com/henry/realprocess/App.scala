@@ -132,7 +132,7 @@ object App {
           currentTimestamp = Math.max(element.timeStamp, previousElementTimestamp)
           currentTimestamp
         }
-    }).print()
+    })
 
     //  数据的预处理
     val clickLogWideDateStream : DataStream[ClickLogWide] = PreprocessTask.process(watermarkDataStream)
