@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9d769bd-b66a-4830-a397-61eeae1dd16a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/bean/ClickLogWide.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/PreprocessTask.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/0b4d0c1b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/201507bb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/520fd656.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/74d009f4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/76c4fbf8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/79c600b1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/9897be78.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/d57e648a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/e6130b81.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/e61c1e01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/0e6080a2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/App.scala" beforeDir="false" afterPath="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/App.scala" afterDir="false" />
@@ -51,12 +40,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ReadMe.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="308">
-                <caret line="601" column="1" lean-forward="true" selection-start-line="601" selection-start-column="1" selection-end-line="601" selection-end-column="1" />
+              <first_editor relative-caret-position="267">
+                <caret line="578" lean-forward="true" selection-start-line="578" selection-end-line="578" />
               </first_editor>
               <second_editor />
             </state>
@@ -64,31 +53,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/bean/ClickLogWide.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="51" column="31" lean-forward="true" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/PreprocessTask.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-              <folding>
-                <element signature="e#36#93#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/App.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-297">
-              <caret line="109" column="19" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="19" />
+            <state relative-caret-position="197">
+              <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
               <folding>
                 <element signature="e#32#59#0" expanded="true" />
               </folding>
@@ -132,7 +100,6 @@
         <option value="$PROJECT_DIR$/real-process/src/main/resources/application.conf" />
         <option value="$PROJECT_DIR$/real-process/src/test/temp.txt" />
         <option value="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/util/GlobalConfigutil.scala" />
-        <option value="$PROJECT_DIR$/real-process/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/bean/ClikLog.scala" />
         <option value="$PROJECT_DIR$/report/src/main/java/com/henry/report/util/ClickLogGenerator.java" />
         <option value="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/bean/ClickLog.scala" />
@@ -142,6 +109,7 @@
         <option value="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/util/HBaseUtil.scala" />
         <option value="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/bean/ClickLogWide.scala" />
         <option value="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/PreprocessTask.scala" />
+        <option value="$PROJECT_DIR$/real-process/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/App.scala" />
         <option value="$PROJECT_DIR$/ReadMe.md" />
       </list>
@@ -178,10 +146,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="152" />
-    <option name="y" value="72" />
+    <option name="x" value="151" />
+    <option name="y" value="71" />
     <option name="width" value="2425" />
-    <option name="height" value="1313" />
+    <option name="height" value="1314" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -191,6 +159,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="CatdeaLogs" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,6 +184,14 @@
               <item name="real-process" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pyg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Flink-pyg" type="462c0819:PsiDirectoryNode" />
+              <item name="real-process" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pyg" type="b2602c69:ProjectViewProjectNode" />
@@ -309,9 +286,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="CatdeaLogs" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -324,7 +300,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572161299018" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572268092009" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../DataManager" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -351,7 +327,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="Application.ClickLogGenerator">
     <configuration name="App" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.henry.realprocess.App" />
       <module name="real-process" />
@@ -436,8 +412,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClickLogGenerator" />
         <item itemvalue="Application.App" />
+        <item itemvalue="Application.ClickLogGenerator" />
         <item itemvalue="Application.HBaseUtil" />
         <item itemvalue="Spring Boot.ReportApplication " />
         <item itemvalue="Application.GlobalConfigutil" />
@@ -486,7 +462,8 @@
       <workItem from="1571915198293" duration="201000" />
       <workItem from="1572083163920" duration="5657000" />
       <workItem from="1572094877643" duration="9879000" />
-      <workItem from="1572139049358" duration="13973000" />
+      <workItem from="1572139049358" duration="14728000" />
+      <workItem from="1572265974262" duration="2095000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1568945373051</created>
@@ -579,7 +556,21 @@
       <option name="project" value="LOCAL" />
       <updated>1572154037578</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="实时数据处理">
+      <created>1572161325564</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1572161325565</updated>
+    </task>
+    <task id="LOCAL-00015" summary="实时数据处理">
+      <created>1572161356849</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1572161356849</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -597,7 +588,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145985000" />
+    <option name="totallyTimeSpent" value="148835000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -610,8 +601,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.14872521" weight="0.23391421" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.14872521" weight="0.19705094" />
       <window_info id="Structure" order="1" sideWeight="0.8512748" side_tool="true" weight="0.23525469" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -621,7 +613,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49798927" visible="true" weight="0.22379604" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798927" weight="0.16005665" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -736,7 +728,8 @@
     <MESSAGE value="三、HBase 获取表" />
     <MESSAGE value="三、HBase util" />
     <MESSAGE value="三、HBase util 工具类编写完毕" />
-    <option name="LAST_COMMIT_MESSAGE" value="三、HBase util 工具类编写完毕" />
+    <MESSAGE value="实时数据处理" />
+    <option name="LAST_COMMIT_MESSAGE" value="实时数据处理" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://E:/MyCode/data-manage/pom.xml" />
@@ -917,20 +910,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/report/src/main/java/com/henry/report/ReportApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="2" column="36" lean-forward="true" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/real-process/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -938,16 +917,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
           <caret line="86" selection-start-line="86" selection-end-line="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/src/main/java/com/henry/report/util/ClickLogGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="97" selection-start-line="97" selection-end-line="97" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1073,15 +1042,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/bean/ClickLogWide.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="51" column="31" lean-forward="true" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+        <state relative-caret-position="1122">
+          <caret line="51" column="31" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/real-process/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/src/main/java/com/henry/report/ReportApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/src/main/java/com/henry/report/util/ClickLogGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-369">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/App.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+          <folding>
+            <element signature="e#32#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/PreprocessTask.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+        <state relative-caret-position="392">
+          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
           <folding>
             <element signature="e#36#93#0" expanded="true" />
           </folding>
@@ -1091,20 +1097,10 @@
     <entry file="file://$PROJECT_DIR$/ReadMe.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="308">
-            <caret line="601" column="1" lean-forward="true" selection-start-line="601" selection-start-column="1" selection-end-line="601" selection-end-column="1" />
+          <first_editor relative-caret-position="267">
+            <caret line="578" lean-forward="true" selection-start-line="578" selection-end-line="578" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/App.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-297">
-          <caret line="109" column="19" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="19" />
-          <folding>
-            <element signature="e#32#59#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

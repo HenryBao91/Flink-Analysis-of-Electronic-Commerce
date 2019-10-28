@@ -503,7 +503,7 @@ val conf:Configuration = HBaseConfiguration.create()
 - 对 table 进行 put 操作
 - 启动编写 main 进行测试
 
-![](screenshot/9379b632.png)
+![](screenshot/af73ebaa.png)
 
 
 ##### 7.1.4、获取数据
@@ -516,7 +516,6 @@ val conf:Configuration = HBaseConfiguration.create()
     - 捕获异常
     - 关闭表
     
-![](screenshot/7b5e4836.png)
     
 ##### 7.1.5、批量存储数据
 创建 putMapData 方法
@@ -526,8 +525,7 @@ val conf:Configuration = HBaseConfiguration.create()
     - 对 table 执行 put 操作
     - 捕获异常
     - 关闭表
-![](screenshot/aef2abe1.png)
-
+![](screenshot/ea8764de.png)
 
 
 ##### 7.1.6、批量获取数据
@@ -554,7 +552,9 @@ val conf:Configuration = HBaseConfiguration.create()
     - 关闭表
     - 启动编写 main 进行测试
  ![](screenshot/d99a61f4.png)
- ![](screenshot/d068b5c0.png)
+ ![](screenshot/d068b5c0.png)   
+   
+   
  
  
     
@@ -592,13 +592,5 @@ val conf:Configuration = HBaseConfiguration.create()
  然后给它额外加上下列额外的字段;
  
  **步骤*
- ![](screenshot/0b4d0c1b.png)
- 
- ![](screenshot/74d009f4.png)
- 
- 
- 
- 
- 
-
-
+![](screenshot/0b4d0c1b.png)
+![](screenshot/0e6080a2.png)

@@ -107,7 +107,7 @@ object App {
 
     }
 
-    tupleDataStream.print()
+//    tupleDataStream.print()
 
     //-----------------  添加水印支持  -----------------------
 
@@ -136,6 +136,7 @@ object App {
 
     //  数据的预处理
     val clickLogWideDateStream : DataStream[ClickLogWide] = PreprocessTask.process(watermarkDataStream)
+    clickLogWideDateStream.print()
 
     // 执行任务
     env.execute("real-process")
