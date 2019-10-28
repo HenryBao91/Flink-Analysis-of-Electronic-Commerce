@@ -594,3 +594,30 @@ val conf:Configuration = HBaseConfiguration.create()
  **步骤*
 ![](screenshot/0b4d0c1b.png)
 ![](screenshot/0e6080a2.png)
+
+
+#### 10.3、预处理：isNew字段处理
+isNew 字段是判断某个`用户ID`，是否已经访问过`某个频道`。
+
+**实现思路**
+![](screenshot/1d504cce.png)
+
+
+user_history 表的列
+- 用户ID：频道ID(rowkey)
+- 用户ID（userID）
+- 频道ID（channelid）
+- 最后访问时间（时间戳）（lastVisitedTime）
+
+![](screenshot/a560cff6.png)
+
+
+
+
+
+
+
+
+
+
+
