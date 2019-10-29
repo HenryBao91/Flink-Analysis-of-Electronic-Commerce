@@ -613,6 +613,50 @@ user_history 表的列
 
 
 
+### 11、实时频道热点分析业务开发
+#### 11.1、业务介绍
+频道热点，就是要统计频道访问（点击）的数量。
+分析得到以下的数据:
+![](screenshot/cdefdf02.png)
+
+> 需要将历史的点击数据进行累加
+
+![](screenshot/fc27880f.png)
+
+其中， 第一步预处理已经完成。
+
+```scala
+    //  转换
+    ChannelRealHotTask.process(clickLogWideDateStream).print()
+```
+![](screenshot/b35e8d12.png)
+
+
+
+落地 HBase
+```scala
+    //  落地 HBase
+    ChannelRealHotTask.process(clickLogWideDateStream)
+```
+```
+    hbase shell
+    scan 'channel' 
+```
+![](screenshot/3254e2ca.png)
+
+
+
+
+
+### 6、实时频道PV/UV分析
+针对频道的PV、UV进行不同维度的分析，有以下三个维度：
+- 小时
+- 天
+- 月
+
+#### 6.1、业务介绍
+
+
 
 
 

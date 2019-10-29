@@ -5,7 +5,7 @@ import java.util.Properties
 
 import com.alibaba.fastjson.JSON
 import com.henry.realprocess.bean.{ClickLog, ClickLogWide, Message}
-import com.henry.realprocess.task.PreprocessTask
+import com.henry.realprocess.task.{ChannelRealHotTask, PreprocessTask}
 import com.henry.realprocess.util.GlobalConfigutil
 import org.apache.flink.api.common.serialization.SimpleStringSchema
 import org.apache.flink.streaming.api.{CheckpointingMode, TimeCharacteristic}
@@ -136,7 +136,12 @@ object App {
 
     //  数据的预处理
     val clickLogWideDateStream : DataStream[ClickLogWide] = PreprocessTask.process(watermarkDataStream)
-    clickLogWideDateStream.print()
+//    clickLogWideDateStream.print()
+
+    //  转换
+//    ChannelRealHotTask.process(clickLogWideDateStream).print()
+    ChannelRealHotTask.process(clickLogWideDateStream)
+
 
     // 执行任务
     env.execute("real-process")
