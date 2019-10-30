@@ -655,6 +655,57 @@ user_history 表的列
 - 月
 
 #### 6.1、业务介绍
+PV(访问量)
+即Page View，页面刷新一次计算一次
+
+UV(独立访客)
+即Unique Visitor，指定时间内相同的客户端只被计算一次
+
+统计分析后得到的数据如下所示：
+![](screenshot/6f5af076.png)
+
+
+#### 6.2、小时维度PV/UV
+```scala
+    //  落地 HBase
+    ChannelPvUvTask.process(clickLogWideDateStream)
+```
+```
+    hbase shell
+    scan 'channel_pvuv' 
+```
+![](screenshot/cf67e612.png)
+
+
+
+
+#### 6.3、天维度PV/UV业务开发
+
+按天的维度来统计 PV、UV 与按小时维度类似，就是分组字段不一样。可以直接复制按小时维度的
+ PV/UV ，然后修改就可以。
+ 
+ 
+
+#### 6.4、小时/天/月维度PV/UV业务开发
+
+将按**小时**、**天**、**月** 三个时间维度的数据放在一起来进行分组。
+
+**思路**
+![](screenshot/aa3dbfbf.png)
+
+![](screenshot/fe002ea4.png)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
