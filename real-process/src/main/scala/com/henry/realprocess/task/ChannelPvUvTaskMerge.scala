@@ -2,6 +2,7 @@ package com.henry.realprocess.task
 
 import com.henry.realprocess.bean.ClickLogWide
 import com.henry.realprocess.util.HBaseUtil
+import org.apache.flink.api.scala._
 import org.apache.commons.lang.StringUtils
 import org.apache.flink.streaming.api.functions.sink.SinkFunction
 import org.apache.flink.streaming.api.scala.{DataStream, KeyedStream, WindowedStream}
@@ -29,10 +30,10 @@ object ChannelPvUvTaskMerge {
     val channelPvUvDS: DataStream[ChannelPvUv] = clickLogWideDateStream.flatMap{
       clickLogWide => {
         List(
-
+          ChannelPvUv(clickLogWide.channelID, clickLogWide.yearMonthDayHour, clickLogWide.count, clickLogWide.isHourNew) ,
+          ChannelPvUv(clickLogWide.channelID, clickLogWide.yearMonthDay, clickLogWide.count, clickLogWide.isDayNew) ,
+          ChannelPvUv(clickLogWide.channelID, clickLogWide.yearMonth, clickLogWide.count, clickLogWide.isMonthNew)
         )
-        ChannelPvUv(clickLogWide.channelID, clickLogWide.yearMonthDayHour,
-          clickLogWide.count, clickLogWide.isHourNew)
       }
     }
 

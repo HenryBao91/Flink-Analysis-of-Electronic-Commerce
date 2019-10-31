@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9d769bd-b66a-4830-a397-61eeae1dd16a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/ChannelPvUvTask.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/ChannelPvUvTaskMerge.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/6f5af076.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/aa3dbfbf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/cf67e612.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/fe002ea4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/ChannelFreshnessTask.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/0bd763d1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/12f712f9.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/App.scala" beforeDir="false" afterPath="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/App.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/ChannelPvUvTaskMerge.scala" beforeDir="false" afterPath="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/ChannelPvUvTaskMerge.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,8 +48,8 @@
         <entry file="file://$PROJECT_DIR$/ReadMe.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="391">
-                <caret line="694" lean-forward="true" selection-start-line="694" selection-end-line="694" />
+              <first_editor relative-caret-position="61">
+                <caret line="718" column="9" selection-start-line="718" selection-start-column="9" selection-end-line="718" selection-end-column="9" />
               </first_editor>
               <second_editor />
             </state>
@@ -58,10 +57,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/ChannelRealHotTask.scala">
+        <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/ChannelFreshnessTask.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="82" column="10" lean-forward="true" selection-start-line="66" selection-start-column="8" selection-end-line="82" selection-end-column="10" />
+            <state relative-caret-position="304">
+              <caret line="32" column="27" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="27" />
+              <folding>
+                <element signature="e#36#82#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/ChannelPvUvTask.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-26">
+              <caret line="80" column="26" lean-forward="true" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
               <folding>
                 <element signature="e#36#82#0" expanded="true" />
               </folding>
@@ -70,22 +81,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/ChannelPvUvTaskMerge.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
-              <folding>
-                <element signature="e#36#82#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/App.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="145" column="51" lean-forward="true" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="51" />
+            <state relative-caret-position="414">
+              <caret line="148" column="4" lean-forward="true" selection-start-line="148" selection-start-column="4" selection-end-line="148" selection-end-column="4" />
               <folding>
                 <element signature="e#32#59#0" expanded="true" />
               </folding>
@@ -141,9 +140,10 @@
         <option value="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/PreprocessTask.scala" />
         <option value="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/ChannelRealHotTask.scala" />
         <option value="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/ChannelPvUvTask.scala" />
-        <option value="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/App.scala" />
-        <option value="$PROJECT_DIR$/ReadMe.md" />
         <option value="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/ChannelPvUvTaskMerge.scala" />
+        <option value="$PROJECT_DIR$/ReadMe.md" />
+        <option value="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/ChannelFreshnessTask.scala" />
+        <option value="$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/App.scala" />
       </list>
     </option>
   </component>
@@ -297,7 +297,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572447338521" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572532480042" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../DataManager" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -462,7 +462,8 @@
       <workItem from="1572139049358" duration="14728000" />
       <workItem from="1572265974262" duration="8299000" />
       <workItem from="1572351325739" duration="5875000" />
-      <workItem from="1572437382620" duration="7926000" />
+      <workItem from="1572437382620" duration="8473000" />
+      <workItem from="1572528138233" duration="4235000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1568945373051</created>
@@ -590,7 +591,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572358283898</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="PV、UV">
+      <created>1572447370061</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1572447370061</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -608,7 +616,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168840000" />
+    <option name="totallyTimeSpent" value="173622000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -623,7 +631,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.14872521" visible="true" weight="0.21045576" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.14872521" weight="0.21313673" />
       <window_info id="Structure" order="1" sideWeight="0.8512748" side_tool="true" weight="0.23525469" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -751,10 +759,10 @@
     <MESSAGE value="实时数据处理" />
     <MESSAGE value="实时数据预处理，宽表处理" />
     <MESSAGE value="实时数据落地HBase" />
-    <option name="LAST_COMMIT_MESSAGE" value="实时数据落地HBase" />
+    <MESSAGE value="PV、UV" />
+    <option name="LAST_COMMIT_MESSAGE" value="PV、UV" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://E:/MyCode/data-manage/ReadMe.md" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.17.RELEASE/spring-web-4.3.17.RELEASE.jar!/org/springframework/web/bind/annotation/RestController.class" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/kafka/spring-kafka/1.0.6.RELEASE/spring-kafka-1.0.6.RELEASE.jar!/org/springframework/kafka/core/KafkaTemplate.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -1095,40 +1103,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/App.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="145" column="51" lean-forward="true" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="51" />
-          <folding>
-            <element signature="e#32#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReadMe.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="391">
-            <caret line="694" lean-forward="true" selection-start-line="694" selection-end-line="694" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/ChannelPvUvTask.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="108" lean-forward="true" selection-start-line="23" selection-end-line="108" />
-          <folding>
-            <element signature="e#36#82#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/ChannelRealHotTask.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="82" column="10" lean-forward="true" selection-start-line="66" selection-start-column="8" selection-end-line="82" selection-end-column="10" />
+        <state relative-caret-position="264">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="25" />
           <folding>
             <element signature="e#36#82#0" expanded="true" />
           </folding>
@@ -1137,10 +1115,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/ChannelPvUvTaskMerge.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+        <state relative-caret-position="330">
+          <caret line="24" column="27" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="27" />
           <folding>
             <element signature="e#36#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReadMe.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="61">
+            <caret line="718" column="9" selection-start-line="718" selection-start-column="9" selection-end-line="718" selection-end-column="9" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/ChannelFreshnessTask.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="32" column="27" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="27" />
+          <folding>
+            <element signature="e#36#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/task/ChannelPvUvTask.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26">
+          <caret line="80" column="26" lean-forward="true" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
+          <folding>
+            <element signature="e#36#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/App.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="148" column="4" lean-forward="true" selection-start-line="148" selection-start-column="4" selection-end-line="148" selection-end-column="4" />
+          <folding>
+            <element signature="e#32#59#0" expanded="true" />
           </folding>
         </state>
       </provider>

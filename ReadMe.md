@@ -695,7 +695,34 @@ UV(独立访客)
 
 ![](screenshot/fe002ea4.png)
 
+```scala
+    //  落地 HBase
+    ChannelPvUvTaskMerge.process(clickLogWideDateStream)
+```
+```
+    hbase shell
+    scan 'channel_pvuv' 
+```
+![](screenshot/12f712f9.png)
 
+
+
+
+### 7、实时频道用户新鲜度分析
+
+#### 7.1、业务介绍
+
+用户新鲜度，即分析网站每个小时、每天、每月活跃用户的新老用户占比
+
+可以通过新鲜度;
+- 从宏观层面上了解每天的新老用户比例以及来源结构
+- 当天新增用户与当天`推广行为`是否相关
+
+统计分析要得到的数据如下：
+![](screenshot/0bd763d1.png)
+
+
+![](screenshot/6c99f78b.png)
 
 
 
