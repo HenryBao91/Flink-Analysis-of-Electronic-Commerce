@@ -721,25 +721,213 @@ UV(独立访客)
 统计分析要得到的数据如下：
 ![](screenshot/0bd763d1.png)
 
-
+ 
 ![](screenshot/6c99f78b.png)
 
 
 
+##  Day 04
+### 1、模板方法提取公共类
+
+**模板方法：**
+模板方法模式是在父类中定义算法的骨架，把具体实现到子类中去，可以在不改变一个算法的结构时
+可重定义该算法的某些步骤。
+
+前面我们已经编写了三个业务的分析代码，代码结构都是分为5个部分，非常的相似。针对这样
+的代码，我们可以进行优化，提取模板类，让所有的任务类都按照模板的顺序去执行。
+
+![](screenshot/277372f9.png)
+
+
+继承父类方法：
+```scala
+ChannelFreshnessTaskTrait.scala
+```
+![](screenshot/3d2cda96.png)
+
+
+```scala
+//  重构模板方法
+    ChannelFreshnessTaskTrait.process(clickLogWideDateStream)
+```
+
+![](screenshot/32a6daaf.png)
+ 
+
+
+### 2、实时频道低于分析业务开发
+
+#### 2.1、业务介绍
+通过地域分析，可以帮助查看地域相关的PV/UV、用户新鲜度。
+
+
+需要分析出来指标
+- PV
+- UV
+- 新用户
+- 老用户
+
+统计分析后的结果如下：
+![](screenshot/2d11fecd.png)
+
+
+#### 2.2、 业务开发
+
+**步骤**
+1. 创建频道地域分析样例类（频道、地域（国省市）、时间、PV、UV、新用户、老用户）
+2. 将预处理后的数据，使用 flatMap 转换为样例类
+3. 按照 频道 、 时间 、 地域 进行分组（分流）
+4. 划分时间窗口（3秒一个窗口）
+5. 进行合并计数统计
+6. 打印测试
+7. 将计算后的数据下沉到Hbase
+
+
+**实现**
+1. 创建一个 ChannelAreaTask 单例对象
+2. 添加一个 ChannelArea 样例类，它封装要统计的四个业务字段：频道ID（channelID）、地域（area）、日期
+（date）pv、uv、新用户（newCount）、老用户（oldCount）
+3. 在 ChannelAreaTask 中编写一个 process 方法，接收预处理后的 DataStream
+4. 使用 flatMap 算子，将 ClickLog 对象转换为三个不同时间维度 ChannelArea
+5. 按照 频道ID 、 时间 、 地域 进行分流
+6. 划分时间窗口（3秒一个窗口）
+7. 执行reduce合并计算
+8. 打印测试
+9. 将合并后的数据下沉到hbase
+    - 准备hbase的表名、列族名、rowkey名、列名
+    - 判断hbase中是否已经存在结果记录
+    - 若存在，则获取后进行累加
+    - 若不存在，则直接写入
+
+
+`ChannelAreaTask`  测试
+![](screenshot/e219a541.png)
+
+
+### 3、 实时运营商分析业务开发
+#### 3.1、 业务介绍
+根据运营商来统计相关的指标。分析出流量的主要来源是哪个运营商的，这样就可以进行较准确的网络推广。
+
+**需要分析出来指标**
+- PV
+- UV
+- 新用户
+- 老用户
+
+**需要分析的维度**
+- 运营商
+- 时间维度（时、天、月）
+
+统计分析后的结果如下：
+![](screenshot/ff2dcb9b.png)
+
+
+#### 3.2、 业务开发
+
+**步骤**
+1. 将预处理后的数据，转换为要分析出来数据（频道、运营商、时间、PV、UV、新用户、老用户）样例类
+2. 按照 频道 、 时间 、 运营商 进行分组（分流）
+3. 划分时间窗口（3秒一个窗口）
+4. 进行合并计数统计
+5. 打印测试
+6. 将计算后的数据下沉到Hbase
+
+
+**实现**
+1. 创建一个 ChannelNetworkTask 单例对象
+2. 添加一个 ChannelNetwork 样例类，它封装要统计的四个业务字段：频道ID（channelID）、运营商
+（network）、日期（date）pv、uv、新用户（newCount）、老用户（oldCount）
+3. 在 ChannelNetworkTask 中编写一个 process 方法，接收预处理后的 DataStream
+4. 使用 flatMap 算子，将 ClickLog 对象转换为三个不同时间维度 ChannelNetwork
+5. 按照 频道ID 、 时间 、 运营商 进行分流
+6. 划分时间窗口（3秒一个窗口）
+7. 执行reduce合并计算
+8. 打印测试
+9. 将合并后的数据下沉到hbase
+    - 准备hbase的表名、列族名、rowkey名、列名
+    - 判断hbase中是否已经存在结果记录
+    - 若存在，则获取后进行累加
+    - 若不存在，则直接写入
+
+ `ChannelNetworkTask`  测试
+报错：
+![](screenshot/3936fce5.png)
+
+```scala
+//  错误代码：
+// totalPv
+if (resultMap != null && resultMap.size > 0 && StringUtils.isNotBlank(resultMap(pvColName))) {
+  totalPv = resultMap(pvColName).toLong + network.pv
+}
+else {
+  totalPv = network.pv
+}
+...
+
+// 正确代码： 即列空的时候写入一个 "" 空字符串 
+// totalPv
+if (resultMap != null && resultMap.size > 0 && StringUtils.isNotBlank(resultMap.getOrElse(pvColName,""))) {
+  totalPv = resultMap(pvColName).toLong + network.pv
+}
+else {
+  totalPv = network.pv
+}
+
+```
+![](screenshot/2c0ad8e2.png)
 
 
 
+### 4、 实时频道浏览器分析业务开发
+
+#### 4.1、 业务介绍
+
+需要分别统计不同浏览器（或者客户端）的占比
+**需要分析出来指标**
+- PV
+- UV
+- 新用户
+- 老用户
+
+**需要分析的维度**
+- 浏览器
+- 时间维度（时、天、月）
+
+统计分析后的结果如下：
+![](screenshot/3b6d6d1f.png)
 
 
+#### 4.2、 业务开发
+
+**步骤**
+1. 创建频道浏览器分析样例类（频道、浏览器、时间、PV、UV、新用户、老用户）
+2. 将预处理后的数据，使用 flatMap 转换为要分析出来数据样例类
+3. 按照 频道 、 时间 、 浏览器 进行分组（分流）
+4. 划分时间窗口（3秒一个窗口）
+5. 进行合并计数统计
+6. 打印测试
+7. 将计算后的数据下沉到Hbase
+
+**实现**
+1. 创建一个 ChannelBrowserTask 单例对象
+2. 添加一个 ChannelBrowser 样例类，它封装要统计的四个业务字段：频道ID（channelID）、浏览器
+（browser）、日期（date）pv、uv、新用户（newCount）、老用户（oldCount）
+3. 在 ChannelBrowserTask 中编写一个 process 方法，接收预处理后的 DataStream
+4. 使用 flatMap 算子，将 ClickLog 对象转换为三个不同时间维度 ChannelBrowser
+5. 按照 频道ID 、 时间 、 浏览器 进行分流
+6. 划分时间窗口（3秒一个窗口）
+7. 执行reduce合并计算
+8. 打印测试
+9. 将合并后的数据下沉到hbase
+    - 准备hbase的表名、列族名、rowkey名、列名
+    - 判断hbase中是否已经存在结果记录
+    - 若存在，则获取后进行累加
+    - 若不存在，则直接写入
 
 
+对重复使用的代码整合到`BaseTask`中进行重构
 
+//  ChannelBrowserTask 测试
+`ChannelBrowserTask.process(clickLogWideDateStream)`
 
-
-
-
-
-
-
-
-
+![](screenshot/58945558.png)

@@ -147,6 +147,18 @@ object App {
 //    ChannelPvUvTaskMerge.process(clickLogWideDateStream)
 //    ChannelFreshnessTask.process(clickLogWideDateStream)
 
+    //  重构模板方法
+    ChannelFreshnessTaskTrait.process(clickLogWideDateStream)
+
+    //  ChannelAreaTask 测试
+    ChannelAreaTask.process(clickLogWideDateStream)
+
+    //  ChannelNetworkTask 测试
+    ChannelNetworkTask.process(clickLogWideDateStream)
+
+    //  ChannelBrowserTask 测试
+    ChannelBrowserTask.process(clickLogWideDateStream)
+
 
     // 执行任务
     env.execute("real-process")
