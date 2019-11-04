@@ -931,3 +931,189 @@ else {
 `ChannelBrowserTask.process(clickLogWideDateStream)`
 
 ![](screenshot/58945558.png)
+
+
+
+
+5.2.4、 canal 解决方案三
+
+![](screenshot/65e75e0f.png)
+
+1. 通过 canal 来解析mysql中的 binlog 日志来获取数据
+2. 不需要使用sql 查询mysql，不会增加mysql的压力
+
+> binlog : mysql 的日志文件，手动开启，二进制文件，增删改命令
+
+1. 通过 canal 来解析mysql中的 binlog 日志来获取数据
+2. 不需要使用sql 查询mysql，不会增加mysql的压力
+
+
+> MySQL 的主从复制，因为 canal 为伪装成 MySQL 的一个从节点，
+这样才能获取到 bilog 文件
+
+
+
+### 6、Canal数据采集平台
+
+接下来我们去搭建Canal的数据采集平台，它是去操作Canal获取MySql的binlog文件，解析之后再把数据存入到Kafka
+中。
+
+![](screenshot/62c03232.png)
+
+
+**学习顺序：**
+- 安装MySql
+- 开启binlog
+- 安装canal
+- 搭建采集系统
+
+
+#### 6.1、 MySql安装
+
+
+#### 6.2、 MySql创建测试表
+
+
+**步骤**
+1. 创建 pyg 数据库
+2. 创建数据库表
+
+**实现**
+推荐使用 sqlyog 来创建数据库、创建表
+1. 创建 pyg 数据库
+2. 将 资料\mysql脚本\ 下的 创建表.sql 贴入到sqlyog中执行，创建数据库表
+
+
+#### 6.3、 binlog 日志介绍
+
+
+- 用来记录mysql中的 增加 、 删除 、 修改 操作
+- select操作 不会 保存到binlog中
+- 必须要 打开 mysql中的binlog功能，才会生成binlog日志
+- binlog日志就是一系列的二进制文件
+
+```
+-rw-rw---- 1 mysql mysql 669 11⽉11日 10 21:29 mysql-bin.000001
+-rw-rw---- 1 mysql mysql 126 11⽉11日 10 22:06 mysql-bin.000002
+-rw-rw---- 1 mysql mysql 11799 11⽉11日 15 18:17 mysql-bin.00000
+
+```
+
+#### 6.4、 开启 binlog
+步骤
+1. 修改mysql配置文件，添加binlog支持
+2. 重启mysql，查看binlog是否配置成功
+实现
+1. 使用vi打开 /etc/my.cnf
+2. 添加以下配置
+
+```
+[mysqld]
+log-bin=/var/lib/mysql/mysql-bin
+binlog-format=ROW
+server_id=1
+```
+
+
+> 注释说明
+>   配置binlog日志的存放路径为/var/lib/mysql目录，文件以mysql-bin开头 log-bin=/var/lib/mysql/mysql-bin
+>   配置mysql中每一行记录的变化都会详细记录下来 binlog-format=ROW
+>   配置当前机器器的服务ID（如果是mysql集群，不能重复） server_id=1
+
+
+3. 重启mysql
+`service mysqld restart`
+或
+`systemctl restart mysqld.service`
+
+4. mysql -u root -p 登录到mysql，执行以下命令
+`show variables like '%log_bin%';`
+
+
+5. mysql输出以下内容，表示binlog已经成功开启
+![](screenshot/48cd018e.png)
+
+
+6. 进入到 /var/lib/mysql 可以查看到mysql-bin.000001文件已经生成
+![](screenshot/e44c5879.png)
+
+
+
+
+### 6.5. 安装Canal
+
+#### 6.5.1. Canal介绍
+- canal是 阿里巴巴 的一个使用Java开发的开源项目
+- 它是专门用来进行 数据库同步 的
+- 目前支持 mysql 、以及(mariaDB)
+
+> MariaDB数据库管理系统是MySQL的一个分支，主要由开源社区在维护，采用GPL授权许可 MariaDB的目的是完
+  全兼容MySQL，包括API和命令行，使之能轻松成为MySQL的代替品。
+
+
+#### 6.5.2. MySql主从复制原理
+mysql主从复制用途
+- 实时灾备，用于故障切换
+- 读写分离，提供查询服务
+- 备份，避免影响业务
+
+主从形式
+- 一主一从
+- 一主多从--扩展系统读取性能
+> 一主一从和一主多从是最常见的主从架构，实施起来简单并且有效，不仅可以实现HA，而且还能读写分离，进而提升集群
+  的并发能力。
+- 多主一从--5.7开始支持
+> 多主一从可以将多个mysql数据库备份到一台存储性能比较好的服务器上。
+- 主主复制
+> 双主复制，也就是互做主从复制，每个master既是master，又是另外一台服务器的slave。这样任何一方所做的变更，
+  都会通过复制应用到另外一方的数据库中。
+- 联级复制
+> 级联复制模式下，部分slave的数据同步不连接主节点，而是连接从节点。因为如果主节点有太多的从节点，就会损耗一
+  部分性能用于replication，那么我们可以让3~5个从节点连接主节点，其它从节点作为二级或者三级与从节点连接，这
+  样不仅可以缓解主节点的压力，并且对数据一致性没有负面影响。
+
+
+![](screenshot/a8d36972.png)
+
+
+主从部署必要条件：
+- 主库开启 binlog 日志
+- 主从 server-id 不同
+- 从库服务器能连通主库
+
+主从复制原理图:
+![](screenshot/7cd00637.png)
+
+1. master 将改变记录到二进制日志( binary log )中（这些记录叫做二进制日志事件， binary log
+events ，可以通过 show binlog events 进行查看）；
+2. slave 的I/O线程去请求主库的binlog，拷贝到它的中继日志( relay log )；
+3. master 会生成一个 log dump 线程，用来给从库I/O线程传输binlog；
+4. slave重做中继日志中的事件，将改变反映它自己的数据。
+
+
+#### 6.5.3. Canal原理
+![](screenshot/a13d8808.png)
+
+
+1. Canal模拟mysql slave的交互协议，伪装自己为mysql slave
+2. 向mysql master发送dump协议
+3. mysql master收到dump协议，发送binary log给slave（canal)
+4. canal解析binary log字节流对象
+
+
+#### 6.5.4. Canal架构设计
+![](screenshot/946fe86f.png)
+
+说明：
+- server 代表一个canal运行实例，对应于一个jvm
+- instance 对应于一个数据队列 （1个server对应1..n个instance)
+
+
+instance模块：
+- eventParser (数据源接入，模拟slave协议和master进行交互，协议解析)
+- eventSink (Parser和Store链接器，进行数据过滤，加工，分发的工作)
+- eventStore (数据存储)
+- metaManager (增量订阅&消费信息管理器)
+
+
+
