@@ -1109,11 +1109,200 @@ events ，可以通过 show binlog events 进行查看）；
 - instance 对应于一个数据队列 （1个server对应1..n个instance)
 
 
-instance模块：
+instance模块（一个数据队列）：
 - eventParser (数据源接入，模拟slave协议和master进行交互，协议解析)
 - eventSink (Parser和Store链接器，进行数据过滤，加工，分发的工作)
 - eventStore (数据存储)
-- metaManager (增量订阅&消费信息管理器)
+- metaManager (增量订阅[读完之后，之前读过的就不再读了]&消费信息管理器)
+
+
+EventParser
+![](screenshot/c33fe1b4.png)
+
+整个parser过程大致可分为六步：
+1. Connection获取上一次解析成功的位置
+2. Connection建立连接，发送BINLOG_DUMP命令
+3. Mysql开始推送Binary Log
+4. 接收到的Binary Log通过Binlog parser进行协议解析，补充一些特定信息
+5. 传递给EventSink模块进行数据存储，是一个阻塞操作，直到存储成功
+6. 存储成功后，定时记录Binary Log位置
+
+
+EventSink设计
+![](screenshot/ebf3c65b.png)
+
+说明：
+- 数据过滤：支持通配符的过滤模式，表名，字段内容等
+- 数据路由/分发：解决1:n (1个parser对应多个store的模式)
+- 数据归并：解决n:1 (多个parser对应1个store)
+- 数据加工：在进入store之前进行额外的处理，比如join
+
+
+EventStore设计
+目前实现了Memory内存、本地file存储以及持久化到zookeeper以保障数据集群共享。 Memory内存的RingBuwer设
+计：
+![](screenshot/9e67979f.png)
+
+
+定义了3个cursor
+- Put : Sink模块进行数据存储的最后一次写入位置
+- Get : 数据订阅获取的最后一次提取位置
+- Ack : 数据消费成功的最后一次消费位置
+
+
+ #### 6.5.5. 安装Canal
+
+**步骤**
+1. 上传canal安装包
+2. 解压canal
+3. 配置canal
+4. 启动canal
+
+
+**实现**
+1. 上传 \资料\软件包\canal.deployer-1.0.24.tar.gz 到 /export/software 目录
+2. 在 /export/servers 下创建 canal 目录，一会直接将canal的文件解压到这个目录中
+```
+cd /export/servers
+mkdir canal
+```
+3. 解压canal到 /export/servers 目录
+```
+tar -xvzf canal.deployer-1.0.24.tar.gz -C ../servers/canal
+
+```
+4. 修改 canal/conf/example 目录中的 instance.properties 文件
+```
+## mysql serverId
+canal.instance.mysql.slaveId = 1234
+  
+# position info
+canal.instance.master.address = node01:3306
+canal.instance.dbUsername = root
+canal.instance.dbPassword = 123456
+
+```
+> 1. canal.instance.mysql.slaveId这个ID不能与之前配置的 service_id 重复
+> 2. canal.instance.master.address配置为mysql安装的机器名和端口号
+
+5. 执行/export/servers/canal/bin目录中的 startup.sh 启动canal
+> cd /export/servers/canal/bin
+>  ./startup.sh
+
+6. 控制台如果输出如下，表示canal已经启动成功
+![](screenshot/820fe570.png)
+![](screenshot/342dcc3e.png)
+
+
+
+### 6.6. Canal数据采集系统 - 项目初始化
+
+**步骤**
+  1. 导入Maven依赖
+  2. 拷贝 资料\工具类\03.Canal数据采集系统 中的 pom.xml 的依赖到 canal-kakfa 项目的pom.xml文件中
+  3. 拷贝 资料\工具类\03.Canal数据采集系统 中的 log4j.properties 配置文件
+  4. 拷贝 资料\工具类\03.Canal数据采集系统 中的 application.properties 文件
+
+
+
+### 6.7. Canal采集程序搭建
+
+使用java语言将canal中的binlog日志解析，并写入到Kafka中
+
+![](screenshot/d9fcfcf5.png)
+
+在canal-kafka项目的 java 目录中，创建以下包结构：
+![](screenshot/dc64a356.png)
+
+
+
+#### 6.7.1. 编写配置文件加载代码
+**步骤**
+1. 创建 GlobalConfigUtil 工具类，读取 application.properties 中的 canal 和 kafka 配置
+2. 添加main方法，测试是否能正确读取配置
+
+**实现**
+1. 在 util 包中创建 GlobalConfigUtil ，用来读取 application.properties 中的配置。我们使用以下代
+码来读取 application.properties 中的配置
+```
+ResourceBundle bundle = ResourceBundle.getBundle("配置文件名"
+, Locale.ENGLISH);
+String host = bundle.getString("属性key");
+
+```
+将 application.properties 中的 canal 和 kafka 配置读取出来
+
+2. 编写main方法测试是否能够正确读取配置
+
+
+
+GlobalConfigUtil.java
+![](screenshot/04e25b5a.png)
+
+
+> 注意：
+  使用ResourceBundle.getBundle("application", Locale.ENGLISH); 读取 application.properties 时 不需要 写
+  后缀名
+
+
+#### 6.7.2. 导入Kafka工具类代码
+KafkaSender.java
+
+
+#### 6.7.3. 导入Canal解析binlog日志工具类代码
+- 将mysql中的 binlog 日志解析
+- 将解析后的数据写入到 Kafka
+CanalClient.java
+
+
+
+#### 6.7.4. 测试工具类代码
+
+**步骤**
+  1. 启动 mysql
+  2. 启动 canal
+  3. 启动 zookeeper 集群
+  4. 启动 kafka 集群
+  5. 在kafka创建一个 canal topic
+```
+bin/kafka-topics.sh --create --zookeeper node01:2181 --replication-factor 2 --partitions 3
+--topic canal
+
+```
+
+  6. 启动kafka的控制台消费者程序
+```
+bin/kafka-console-consumer.sh --zookeeper node01:2181 --from-beginning --topic canal
+
+```
+
+
+  7. 启动工具类 canal同步程序
+  8. 打开 navicat ，往mysql中插入一些数据
+```sql
+INSERT INTO commodity(commodityId , commodityName , commodityTypeId , originalPrice , 
+activityPrice) VALUES (1 , '耐克' , 1 , 888.00 , 820.00);
+  
+INSERT INTO commodity(commodityId , commodityName , commodityTypeId , originalPrice , 
+activityPrice) VALUES (2 , '阿迪达斯' , 1 , 900.00 , 870.00);
+  
+INSERT INTO commodity(commodityId , commodityName , commodityTypeId , originalPrice , 
+activityPrice) VALUES (3 , 'MacBook Pro' , 2 , 18000.00 , 17500.00);
+  
+INSERT INTO commodity(commodityId , commodityName , commodityTypeId , originalPrice , 
+activityPrice) VALUES (4 , '联想' , 2 , 5500.00 , 5320.00);
+  
+INSERT INTO commodity(commodityId , commodityName , commodityTypeId , originalPrice , 
+activityPrice) VALUES (5 , '索菲亚' , 3 , 35000.00 , 30100.00);
+  
+INSERT INTO commodity(commodityId , commodityName , commodityTypeId , originalPrice , 
+activityPrice) VALUES (6 , '欧派' , 3 , 43000.00 , 40000.00);
+
+```
+
+  9. 如果kafka中能看到打印以下消息，表示canal已经正常工作
+![](screenshot/d42bd3f1.png)
+
 
 
 
