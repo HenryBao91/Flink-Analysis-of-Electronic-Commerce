@@ -2,23 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9d769bd-b66a-4830-a397-61eeae1dd16a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/canal-kafka/java/CanalClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canal-kafka/java/com/henry/canal_kafka/util/GlobalConfigUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canal-kafka/java/com/henry/canal_kafka/util/KafkaSender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canal-kafka/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canal-kafka/resources/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/04e25b5a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/342dcc3e.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/820fe570.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/9e67979f.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/c33fe1b4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/d42bd3f1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/d9fcfcf5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/dc64a356.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/ebf3c65b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/036a079d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/1a3addd7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/3c8d398c.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/3f08b9d0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/4cf81224.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/7cba404f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/c1186185.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/cfd8e121.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sync-db/src/main/resources/application.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sync-db/src/main/resources/hbase-site.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sync-db/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/App.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/FlinkUtils.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/GlobalConfigutil.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/HBaseUtil.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/canal-kafka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/canal-kafka/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/canal-kafka/java/CanalClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/canal-kafka/src/main/java/CanalClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/canal-kafka/java/com/henry/canal_kafka/util/GlobalConfigUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/canal-kafka/src/main/java/com/henry/canal_kafka/util/GlobalConfigUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/canal-kafka/java/com/henry/canal_kafka/util/KafkaSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/canal-kafka/src/main/java/com/henry/canal_kafka/util/KafkaSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/canal-kafka/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/canal-kafka/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/canal-kafka/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/canal-kafka/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sync-db/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sync-db/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -53,64 +59,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ReadMe.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="454">
-                <caret line="1272" column="28" selection-start-line="1272" selection-start-column="28" selection-end-line="1272" selection-end-column="28" />
-                <folding>
-                  <element signature="n#!!doc" expanded="true" />
-                </folding>
+              <first_editor relative-caret-position="611">
+                <caret line="1413" lean-forward="true" selection-start-line="1413" selection-end-line="1413" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/canal-kafka/java/CanalClient.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/App.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-198">
-              <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/canal-kafka/java/com/henry/canal_kafka/util/GlobalConfigUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="29" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/canal-kafka/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/canal-kafka/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/App.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2948">
-              <caret line="148" selection-start-line="148" selection-end-line="148" />
+            <state relative-caret-position="238">
+              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
               <folding>
-                <element signature="e#32#59#0" expanded="true" />
+                <element signature="e#26#53#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/FlinkUtils.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="454">
+              <caret line="70" column="4" lean-forward="true" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
+              <folding>
+                <element signature="e#31#58#0" expanded="true" />
+                <element signature="e#420#1445#0" />
               </folding>
             </state>
           </provider>
@@ -130,6 +110,7 @@
       <find>l</find>
       <find>                     </find>
       <find>network</find>
+      <find>hdfs://master</find>
     </findStrings>
     <replaceStrings>
       <replace>browser</replace>
@@ -182,7 +163,13 @@
         <option value="$PROJECT_DIR$/canal-kafka/resources/application.properties" />
         <option value="$PROJECT_DIR$/canal-kafka/java/CanalClient.java" />
         <option value="$PROJECT_DIR$/canal-kafka/java/com/henry/canal_kafka/util/GlobalConfigUtil.java" />
+        <option value="$PROJECT_DIR$/sync-db/pom.xml" />
+        <option value="$PROJECT_DIR$/sync-db/src/main/resources/application.conf" />
+        <option value="$PROJECT_DIR$/sync-db/src/main/resources/hbase-site.xml" />
+        <option value="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/GlobalConfigutil.scala" />
         <option value="$PROJECT_DIR$/ReadMe.md" />
+        <option value="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/FlinkUtils.scala" />
+        <option value="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/App.scala" />
       </list>
     </option>
   </component>
@@ -230,8 +217,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="CatdeaLogs" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -242,13 +227,63 @@
             <path>
               <item name="pyg" type="b2602c69:ProjectViewProjectNode" />
               <item name="Flink-pyg" type="462c0819:PsiDirectoryNode" />
-              <item name="canal-kafka" type="462c0819:PsiDirectoryNode" />
+              <item name="sync-db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pyg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Flink-pyg" type="462c0819:PsiDirectoryNode" />
+              <item name="sync-db" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pyg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Flink-pyg" type="462c0819:PsiDirectoryNode" />
+              <item name="sync-db" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pyg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Flink-pyg" type="462c0819:PsiDirectoryNode" />
+              <item name="sync-db" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pyg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Flink-pyg" type="462c0819:PsiDirectoryNode" />
+              <item name="sync-db" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pyg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Flink-pyg" type="462c0819:PsiDirectoryNode" />
+              <item name="sync-db" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="syncdb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pyg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Flink-pyg" type="462c0819:PsiDirectoryNode" />
+              <item name="sync-db" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="syncdb" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="CatdeaLogs" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -261,7 +296,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572963631161" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573054106608" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../DataManager" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -271,12 +306,16 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\IdeaProject\Flink-pyg\sync-db\src\main" />
+      <recent name="E:\IdeaProject\Flink-pyg\canal-kafka\src\main" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\IdeaProject\Flink-pyg\sync-db\src\main\scala\com\henry\syncdb\util" />
+      <recent name="E:\IdeaProject\Flink-pyg\sync-db\src\main\resources" />
       <recent name="E:\IdeaProject\Flink-pyg\canal-kafka\java\com\henry\canal_kafka\util" />
       <recent name="E:\IdeaProject\Flink-pyg\canal-kafka\java" />
       <recent name="E:\IdeaProject\Flink-pyg\canal-kafka\resources" />
-      <recent name="E:\IdeaProject\Flink-pyg\real-process\src\main\scala\com\henry\realprocess\task" />
-      <recent name="E:\IdeaProject\Flink-pyg\real-process\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -370,9 +409,9 @@
       <item itemvalue="Application.ClickLogGenerator" />
       <item itemvalue="Application.App" />
       <item itemvalue="Application.HBaseUtil" />
+      <item itemvalue="Application.GlobalConfigUtil" />
       <item itemvalue="Spring Boot.ReportApplication" />
       <item itemvalue="Spring Boot.ReportApplication " />
-      <item itemvalue="Application.GlobalConfigUtil" />
     </list>
     <recent_temporary>
       <list>
@@ -434,7 +473,8 @@
       <workItem from="1572615035007" duration="605000" />
       <workItem from="1572747451901" duration="15445000" />
       <workItem from="1572868525617" duration="5480000" />
-      <workItem from="1572953722911" duration="6155000" />
+      <workItem from="1572953722911" duration="6317000" />
+      <workItem from="1573039096754" duration="11081000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1568945373051</created>
@@ -590,7 +630,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572878031456</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Cannal">
+      <created>1572963643744</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1572963643744</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -608,7 +655,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201493000" />
+    <option name="totallyTimeSpent" value="212736000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -623,7 +670,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.14872521" weight="0.1997319" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.14872521" visible="true" weight="0.16957104" />
       <window_info id="Structure" order="1" sideWeight="0.8512748" side_tool="true" weight="0.23525469" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -633,7 +680,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798927" visible="true" weight="0.16005665" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798927" weight="0.16005665" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -755,71 +802,10 @@
     <MESSAGE value="用户新鲜度" />
     <MESSAGE value="实时频道分析" />
     <MESSAGE value="MySQL、Cannal" />
-    <option name="LAST_COMMIT_MESSAGE" value="MySQL、Cannal" />
+    <MESSAGE value="Cannal" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cannal" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/report/src/main/java/com/henry/report/bean/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
-          <folding>
-            <element signature="e#288#289#0" expanded="true" />
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
-            <element signature="e#389#390#0" expanded="true" />
-            <element signature="e#423#424#0" expanded="true" />
-            <element signature="e#455#456#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
-            <element signature="e#579#580#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
-            <element signature="e#655#656#0" expanded="true" />
-            <element signature="e#693#694#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="16" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/src/main/java/com/henry/report/bean/Clicklog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1188">
-          <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-          <folding>
-            <element signature="e#1357#1358#0" expanded="true" />
-            <element signature="e#1395#1396#0" expanded="true" />
-            <element signature="e#1647#1648#0" expanded="true" />
-            <element signature="e#1679#1680#0" expanded="true" />
-            <element signature="e#1713#1714#0" expanded="true" />
-            <element signature="e#1743#1744#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/src/main/java/com/henry/report/controller/ReportController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/real-process/src/main/resources/scriptFile.scala" />
-    <entry file="file://$PROJECT_DIR$/real-process/src/main/resources/application.properties" />
-    <entry file="file://$PROJECT_DIR$/real-process/src/test/temp.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="61" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-connector-kafka-base_2.11/1.6.0/flink-connector-kafka-base_2.11-1.6.0-sources.jar!/org/apache/flink/streaming/util/serialization/KeyedDeserializationSchemaWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -838,13 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
           <caret line="37" column="42" lean-forward="true" selection-start-line="37" selection-start-column="42" selection-end-line="38" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-connector-kafka-0.10_2.11/1.6.0/flink-connector-kafka-0.10_2.11-1.6.0-sources.jar!/org/apache/flink/streaming/connectors/kafka/FlinkKafkaConsumer010.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="116" column="58" lean-forward="true" selection-start-line="116" selection-start-column="58" selection-end-line="116" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -950,13 +929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/real-process/src/main/resources/hbase-site.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1113,61 +1085,123 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/App.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2948">
-          <caret line="148" selection-start-line="148" selection-end-line="148" />
-          <folding>
-            <element signature="e#32#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canal-kafka/resources/log4j.properties">
+    <entry file="file://$PROJECT_DIR$/canal-kafka/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="3" column="51" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/canal-kafka/pom.xml">
+    <entry file="file://$PROJECT_DIR$/canal-kafka/src/main/java/CanalClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canal-kafka/java/CanalClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-198">
+        <state relative-caret-position="198">
           <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/canal-kafka/java/com/henry/canal_kafka/util/GlobalConfigUtil.java">
+    <entry file="file://$PROJECT_DIR$/canal-kafka/src/main/java/com/henry/canal_kafka/util/GlobalConfigUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="29" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/canal-kafka/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/canal-kafka/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="682">
+          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sync-db/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2860">
+          <caret line="130" column="16" lean-forward="true" selection-start-line="130" selection-start-column="16" selection-end-line="130" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/real-process/src/main/resources/hbase-site.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="53" selection-start-line="53" selection-end-line="56" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sync-db/src/main/resources/hbase-site.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canal-kafka/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/GlobalConfigutil.scala">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/HBaseUtil.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#31#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/App.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-connector-kafka-0.10_2.11/1.6.0/flink-connector-kafka-0.10_2.11-1.6.0-sources.jar!/org/apache/flink/streaming/connectors/kafka/FlinkKafkaConsumer010.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="83" column="107" lean-forward="true" selection-start-line="83" selection-start-column="33" selection-end-line="83" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sync-db/src/main/resources/application.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" selection-start-line="4" selection-end-line="16" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ReadMe.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="454">
-            <caret line="1272" column="28" selection-start-line="1272" selection-start-column="28" selection-end-line="1272" selection-end-column="28" />
-            <folding>
-              <element signature="n#!!doc" expanded="true" />
-            </folding>
+          <first_editor relative-caret-position="611">
+            <caret line="1413" lean-forward="true" selection-start-line="1413" selection-end-line="1413" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/FlinkUtils.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="70" column="4" lean-forward="true" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
+          <folding>
+            <element signature="e#31#58#0" expanded="true" />
+            <element signature="e#420#1445#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/App.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+          <folding>
+            <element signature="e#26#53#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

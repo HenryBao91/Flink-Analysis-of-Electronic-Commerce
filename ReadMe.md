@@ -1255,7 +1255,6 @@ KafkaSender.java
 CanalClient.java
 
 
-
 #### 6.7.4. 测试工具类代码
 
 **步骤**
@@ -1302,6 +1301,121 @@ activityPrice) VALUES (6 , '欧派' , 3 , 43000.00 , 40000.00);
 
   9. 如果kafka中能看到打印以下消息，表示canal已经正常工作
 ![](screenshot/d42bd3f1.png)
+
+
+
+
+### 1. Flink实时数据同步系统开发
+
+![](screenshot/3f08b9d0.png)
+
+
+其中，MySQL连接Cannal，Canal操作MySQL的binlog文件。
+实时同步系统Flink将Kafka中的Json数据读取过来，进行转换，存入HBase。
+
+
+#### 1.1. binlog日志格式分析
+
+测试日志数据
+```json
+{
+    "emptyCount": 2,
+    "logFileName": "mysql-bin.000002",
+    "dbName": "pyg",
+    "logFileOffset": 250,
+    "eventType": "INSERT",
+    "columnValueList": [
+            {
+            "columnName": "commodityId",
+            "columnValue": "1",
+            "isValid": "true"
+            },
+            {
+            "columnName": "commodityName",
+            "columnValue": "耐克",
+            "isValid": "true"
+            },
+            {
+            "columnName": "commodityTypeId",
+            "columnValue": "1",
+            "isValid": "true"
+            },
+            {
+            "columnName": "originalPrice",
+            "columnValue": "888.0",
+            "isValid": "true"
+            },
+            {
+            "columnName": "activityPrice",
+            "columnValue": "820.0",
+            "isValid": "true"
+            }
+],
+    "tableName": "commodity",
+    "timestamp": 1553741346000
+}
+
+```
+
+格式分析
+字段以及说明
+![](screenshot/4cf81224.png)
+
+
+
+#### 1.2. Flink实时同步应用开发
+整体架构
+![](screenshot/3c8d398c.png)
+Kafka的数据来源于binlog，当Flink同步程序拿到binlog之后会进行处理和转换，然后
+写入到HBase中。
+
+
+具体架构
+![](screenshot/cfd8e121.png)
+
+1. Flink对接Kafka
+2. 对数据进行预处理（将原始样例类转换成HBase可以操作的样例类，存储到HBase）
+3. 将数据落地到Hbase
+
+
+数据同步说明
+![](screenshot/7cba404f.png)
+
+> 要确保hbase中的rowkey是唯一的，数据落地不能被覆盖
+
+
+
+#### 1.3. 实时数据同步项目初始化
+在sync-db项目的scala 目录中，创建以下包结构：
+![](screenshot/c1186185.png)
+
+步骤
+1. 将资料\工具类\04.Flink数据同步系统目录的pom.xml文件中的依赖导入到sync-db 项目的pom.xml
+2. sync-db 模块添加scala支持
+3. main和test创建scala 文件夹，并标记为源代码和测试代码目录
+4. 将资料\工具类\04.Flink数据同步系统目录的application.conf 和log4j.properties 配置文件
+5. 复制之前Flink项目中的GlobalConfigUtil 和HBaseUtil
+
+
+#### 1.4. Flink程序开发
+
+步骤
+1. 编写App.scala ，初始化Flink环境
+2. 运行Flink程序，测试是否能够消费到kafka中topic为canal 的数据
+3. 编写FlinkUtils.scala
+
+`App.scala`
+![](screenshot/1a3addd7.png)
+
+整合kafka
+![](screenshot/036a079d.png)
+
+
+
+
+
+
+
 
 
 
