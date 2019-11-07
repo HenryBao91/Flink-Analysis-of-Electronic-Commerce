@@ -2,29 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9d769bd-b66a-4830-a397-61eeae1dd16a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/screenshot/036a079d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/1a3addd7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/3c8d398c.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/3f08b9d0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/4cf81224.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/7cba404f.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/c1186185.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/cfd8e121.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sync-db/src/main/resources/application.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sync-db/src/main/resources/hbase-site.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sync-db/src/main/resources/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/App.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/FlinkUtils.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/GlobalConfigutil.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/HBaseUtil.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/03ef7ace.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/07a78b77.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/21733492.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/22cd7b3c.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/34f66a92.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/3754f480.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/4b18ecbe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/58926ce0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/6c04e485.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/880c750d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/8c5fa195.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/a47efd66.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/dedf144c.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/ec1f3fda.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/bean/Cannal.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/bean/HBaseOperation.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/task/PreprocessTask.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/canal-kafka/java/CanalClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/canal-kafka/src/main/java/CanalClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/canal-kafka/java/com/henry/canal_kafka/util/GlobalConfigUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/canal-kafka/src/main/java/com/henry/canal_kafka/util/GlobalConfigUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/canal-kafka/java/com/henry/canal_kafka/util/KafkaSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/canal-kafka/src/main/java/com/henry/canal_kafka/util/KafkaSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/canal-kafka/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/canal-kafka/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/canal-kafka/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/canal-kafka/src/main/resources/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sync-db/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sync-db/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/App.scala" beforeDir="false" afterPath="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/App.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/HBaseUtil.scala" beforeDir="false" afterPath="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/HBaseUtil.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -59,38 +57,59 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ReadMe.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="611">
-                <caret line="1413" lean-forward="true" selection-start-line="1413" selection-end-line="1413" />
+              <first_editor relative-caret-position="465">
+                <caret line="1508" lean-forward="true" selection-start-line="1508" selection-end-line="1508" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/App.scala">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/bean/Cannal.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+            <state relative-caret-position="-84">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/task/PreprocessTask.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-400">
+              <caret line="20" column="54" lean-forward="true" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
               <folding>
-                <element signature="e#26#53#0" expanded="true" />
+                <element signature="e#31#47#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/FlinkUtils.scala">
+        <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/App.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="70" column="4" lean-forward="true" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
+            <state relative-caret-position="304">
+              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
               <folding>
-                <element signature="e#31#58#0" expanded="true" />
-                <element signature="e#420#1445#0" />
+                <element signature="e#26#53#0" expanded="true" />
+                <element signature="e#978#994#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/HBaseUtil.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="259" column="20" lean-forward="true" selection-start-line="259" selection-start-column="20" selection-end-line="259" selection-end-column="20" />
+              <folding>
+                <element signature="e#31#74#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,9 +130,11 @@
       <find>                     </find>
       <find>network</find>
       <find>hdfs://master</find>
+      <find>Canal</find>
     </findStrings>
     <replaceStrings>
       <replace>browser</replace>
+      <replace>Cannal</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -122,7 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/report/src/main/java/com/henry/report/ReportApplication.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/report/src/test/java/com/henry/report/KafkaTest.java" />
         <option value="$PROJECT_DIR$/report/src/main/java/com/henry/report/util/ToundRobinPartitioner.java" />
@@ -167,9 +187,13 @@
         <option value="$PROJECT_DIR$/sync-db/src/main/resources/application.conf" />
         <option value="$PROJECT_DIR$/sync-db/src/main/resources/hbase-site.xml" />
         <option value="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/GlobalConfigutil.scala" />
-        <option value="$PROJECT_DIR$/ReadMe.md" />
         <option value="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/FlinkUtils.scala" />
+        <option value="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/bean/HBaseOperation.scala" />
+        <option value="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/bean/Cannal.scala" />
+        <option value="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/task/PreprocessTask.scala" />
+        <option value="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/HBaseUtil.scala" />
         <option value="$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/App.scala" />
+        <option value="$PROJECT_DIR$/ReadMe.md" />
       </list>
     </option>
   </component>
@@ -217,6 +241,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -267,23 +293,11 @@
               <item name="scala" type="462c0819:PsiDirectoryNode" />
               <item name="syncdb" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="pyg" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Flink-pyg" type="462c0819:PsiDirectoryNode" />
-              <item name="sync-db" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="scala" type="462c0819:PsiDirectoryNode" />
-              <item name="syncdb" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="CatdeaLogs" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -296,7 +310,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573054106608" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573137955257" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../DataManager" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -306,16 +320,16 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\IdeaProject\Flink-pyg\sync-db\src\main" />
-      <recent name="E:\IdeaProject\Flink-pyg\canal-kafka\src\main" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\IdeaProject\Flink-pyg\sync-db\src\main\scala\com\henry\syncdb\task" />
       <recent name="E:\IdeaProject\Flink-pyg\sync-db\src\main\scala\com\henry\syncdb\util" />
       <recent name="E:\IdeaProject\Flink-pyg\sync-db\src\main\resources" />
       <recent name="E:\IdeaProject\Flink-pyg\canal-kafka\java\com\henry\canal_kafka\util" />
       <recent name="E:\IdeaProject\Flink-pyg\canal-kafka\java" />
-      <recent name="E:\IdeaProject\Flink-pyg\canal-kafka\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\IdeaProject\Flink-pyg\sync-db\src\main" />
+      <recent name="E:\IdeaProject\Flink-pyg\canal-kafka\src\main" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -474,7 +488,8 @@
       <workItem from="1572747451901" duration="15445000" />
       <workItem from="1572868525617" duration="5480000" />
       <workItem from="1572953722911" duration="6317000" />
-      <workItem from="1573039096754" duration="11081000" />
+      <workItem from="1573039096754" duration="11383000" />
+      <workItem from="1573125966829" duration="6192000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1568945373051</created>
@@ -637,7 +652,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572963643744</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Flink 整合 kafka">
+      <created>1573054140890</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1573054140891</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -655,7 +677,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212736000" />
+    <option name="totallyTimeSpent" value="219230000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -670,7 +692,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.14872521" visible="true" weight="0.16957104" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.14872521" visible="true" weight="0.18230563" />
       <window_info id="Structure" order="1" sideWeight="0.8512748" side_tool="true" weight="0.23525469" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -692,7 +714,7 @@
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.3286119" />
-      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49962547" weight="0.25070822" />
+      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49962547" weight="0.11331445" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -803,40 +825,10 @@
     <MESSAGE value="实时频道分析" />
     <MESSAGE value="MySQL、Cannal" />
     <MESSAGE value="Cannal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cannal" />
+    <MESSAGE value="Flink 整合 kafka" />
+    <option name="LAST_COMMIT_MESSAGE" value="Flink 整合 kafka" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-connector-kafka-base_2.11/1.6.0/flink-connector-kafka-base_2.11-1.6.0-sources.jar!/org/apache/flink/streaming/util/serialization/KeyedDeserializationSchemaWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-connector-kafka-base_2.11/1.6.0/flink-connector-kafka-base_2.11-1.6.0-sources.jar!/org/apache/flink/streaming/util/serialization/KeyedDeserializationSchema.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-core/1.6.0/flink-core-1.6.0-sources.jar!/org/apache/flink/api/common/serialization/DeserializationSchema.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="37" column="42" lean-forward="true" selection-start-line="37" selection-start-column="42" selection-end-line="38" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/util/GlobalConfigutil.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/report/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
@@ -1092,13 +1084,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/canal-kafka/src/main/java/CanalClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/canal-kafka/src/main/java/com/henry/canal_kafka/util/GlobalConfigUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -1141,18 +1126,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/GlobalConfigutil.scala">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/HBaseUtil.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#31#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/real-process/src/main/scala/com/henry/realprocess/App.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -1174,34 +1147,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ReadMe.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="611">
-            <caret line="1413" lean-forward="true" selection-start-line="1413" selection-end-line="1413" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/GlobalConfigutil.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canal-kafka/src/main/java/CanalClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-434">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canal-kafka/src/main/java/com/henry/canal_kafka/util/KafkaSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/FlinkUtils.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="70" column="4" lean-forward="true" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
+        <state relative-caret-position="194">
+          <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
           <folding>
             <element signature="e#31#58#0" expanded="true" />
-            <element signature="e#420#1445#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-scala_2.11/1.6.0/flink-streaming-scala_2.11-1.6.0-sources.jar!/org/apache/flink/streaming/api/scala/DataStream.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38">
+          <caret line="842" column="76" selection-start-line="842" selection-start-column="46" selection-end-line="842" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/bean/HBaseOperation.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="44" lean-forward="true" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/util/HBaseUtil.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="259" column="20" lean-forward="true" selection-start-line="259" selection-start-column="20" selection-end-line="259" selection-end-column="20" />
+          <folding>
+            <element signature="e#31#74#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/App.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+        <state relative-caret-position="304">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
           <folding>
             <element signature="e#26#53#0" expanded="true" />
+            <element signature="e#978#994#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/task/PreprocessTask.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-400">
+          <caret line="20" column="54" lean-forward="true" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+          <folding>
+            <element signature="e#31#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sync-db/src/main/scala/com/henry/syncdb/bean/Cannal.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-84">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReadMe.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="465">
+            <caret line="1508" lean-forward="true" selection-start-line="1508" selection-end-line="1508" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

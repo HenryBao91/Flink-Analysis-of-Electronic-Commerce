@@ -226,7 +226,7 @@ object HBaseUtil {
     * @param rowkey           主键
     * @param columnFamilyName 列族名
     */
-  def delete(tableNameStr:String, rowkey:String, columnFamilyName:String)={
+  def deleteData(tableNameStr:String, rowkey:String, columnFamilyName:String)={
 
     // 1、获取 Table
     val table:Table = getTable(tableNameStr, columnFamilyName)
@@ -266,7 +266,7 @@ object HBaseUtil {
 
 //    println(getMapData("test", "1", "info", List("t1", "t2")))
 
-    delete("test", "1", "info")
+    deleteData("test", "1", "info")
     println(getMapData("test", "1", "info", List("t1", "t2")))
 
   }

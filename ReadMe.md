@@ -1412,11 +1412,125 @@ Kafka的数据来源于binlog，当Flink同步程序拿到binlog之后会进行�
 
 
 
+#### 1.4.1. 定义原始Canal消息样例类
+
+步骤
+1. 在bean 包下创建Canal原始消息映射样例类
+2. 在Cannal样例类中编写apply方法，使用FastJSON来解析数据，转换为Cannal样例类对象
+3. 编写main 方法测试是否能够成功构建样例类对象
+
+
+
+
+#### 1.4.2. 解析Kafka数据流为Canal样例类
+
+步骤
+1. 在map 算子将消息转换为Canal样例类对象
+2. 打印测试，如果能输出以下信息，表示成功
+![](screenshot/03ef7ace.png)
+
+
+#### 1.4.3. 添加水印支持
+步骤
+1. 使用Canal中的timestamp 字段，生成水印数据
+2. 重新运行Flink，打印添加水印后的数据
+![](screenshot/22cd7b3c.png)
+
+
+
+
+#### 1.4.4. 定义HBaseOperation样例类
+
+HbaseOperation样例类主要封装对Hbase的操作，主要封装以下字段：
+- 操作类型（opType）= INSERT/DELETE/UPDATE
+- 表名（tableName）= mysql.binlog数据库名.binlog表名
+- 列族名（cfName）= 固定为info
+- rowkey = 唯一主键（取binlog中列数据的第一个）
+- 列名（colName）= binlog中列名
+- 列值（colValue）= binlog中列值
+
+![](screenshot/58926ce0.png)
+
+
+
+#### 1.4.5. 将Canal样例类转换为HBaseOperation样例类
+一个binlog消息中，有会有多个列的操作。它们的映射关系如下：
+
+可以使用flatMap 算子，来生成一组HBaseOperation 操作
+步骤
+1. 创建一个预处理任务对象
+2. 使用flatMap对水印数据流转换为HBaseOperation
+    - 根据eventType分别处理HBaseOperation 列表
+    - 生成的表名为mysql.数据库名.表名
+    - rowkey就是第一个列的值
+    - INSERT操作 -> 将所有列值转换为HBaseOperation
+    - UPDATE操作 -> 过滤掉isValid字段为false 的列，再转换为HBaseOperation
+    - DELETE操作 -> 只生成一条DELETE的HBaseOperation的List
+    - INSERT操作记录
+![](screenshot/34f66a92.png)
+
+![](screenshot/a47efd66.png)
+
+实现
+1. 在task 包下创建PreprocessTask 单例对象，添加process 方法
+2. 使用flatMap对Canal样例类进行扩展
+3. 使用FastJSON 解析Canal样例类中的列值列表数据，并存储到一个Seq中
+4. 遍历集合，构建HBaseOperation 样例类对象
+5. 打印测试
+6. 启动Flink验证程序是否正确处理
+
+
+> JSON字符串转List
+  List<T> parseArray(String text, Class<T> clazz)
+  classOf[T] : 获取class对象
+  Java的List转Scala的集合
+  注意要导入: import scala.collection.JavaConverters._
+  var scalaList: mutable.Buffer[T] = javaList.asScala
+  
+  
+#### 1.4.6. Flink数据同步到hbase
+步骤
+1. 分两个落地实现，一个是delete ，一个是insert/update （因为hbase中只有一个put操作，所以只要是
+
+2. 启动hbase
+
+3. 启动flink 测试
 
 
 
 
 
+#### 1.4.7. 验证Flink同步数据功能
+步骤
+1. 启动mysql
+2. 启动canal
+3. 启动zookeeper 集群
+4. 启动kafka 集群
+5. 启动hdfs 集群
+6. 启动hbase 集群
+7. 启动Flink数据同步程序
+8. 启动Canal数据同步程序
+9. 在mysql中执行insert、update、delete语句，查看hbase 数据是否落地
 
 
+
+insert/update都转换为put操作）
+执行插入：
+![](screenshot/4b18ecbe.png)
+修改数据：
+![](screenshot/880c750d.png)
+![](screenshot/07a78b77.png)
+
+删除操作：
+![](screenshot/ec1f3fda.png)
+
+
+落地HBase：
+删除动作：
+![](screenshot/dedf144c.png)
+![](screenshot/8c5fa195.png)
+
+修改动作：
+![](screenshot/21733492.png)
+![](screenshot/6c04e485.png)
 
